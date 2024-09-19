@@ -17,7 +17,7 @@ import { AuthProvider } from "./components/AuthContext";
 import Checkout from "./components/Checkout";
 import Signup from "./components/SignUp";
 import Login from "./components/Login";
-import ProfilePage from "./components/ProfilePage";
+import { ProfilePage } from "./components/ProfilePage";
 import Payment from "./components/Payment";
 import Dashboard from "./components/Dashboard";
 
@@ -81,7 +81,7 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/wishlist" element={<Wishlist />} />{" "}
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="/payment" element={<Payment/>} />
+            <Route path="/payment" element={<Payment />} />
             <Route path="/admin/dashboard" element={<Dashboard />} />
             {/* Add Wishlist route */}
             <Route path="*" element={<Home />} />
