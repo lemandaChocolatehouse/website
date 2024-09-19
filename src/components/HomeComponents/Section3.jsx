@@ -120,7 +120,7 @@ const Section3 = () => {
           <img className="heading-3 w-1/2" src={Heading3} alt="Heading" />
         </div>
         <div className="section3-links flex items-center justify-center gap-3 w-full p-5">
-          {["ALL", "CHOCOLATE", "COOKIES"].map((item) => (
+          {["ALL", "CHOCOLATE", "COOKIES", "CAKE"].map((item) => (
             <button
               className={`px-6 py-2 ${
                 category.toUpperCase() === item
