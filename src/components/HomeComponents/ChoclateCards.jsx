@@ -1,30 +1,34 @@
-import { useState, useEffect ,useContext} from "react";
-import PropTypes from "prop-types";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios"; // Import axios for making HTTP requests
-import { CartContext } from '../CartContext';
+import { CartContext } from "../CartContext";
+import { convertImageToBase64 } from "../../utils";
+import PropTypes from "prop-types";
 // import Cart from "../Cart";
 
 const ITEMS_PER_PAGE = 8;
 
+
+
 const ChoclateCards = ({ selectedCategory, selectedPrice }) => {
+
+  const backend = import.meta.env.VITE_BACKEND_URL;
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const {  addToCart } = useContext(CartContext)
-
-
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     // Fetch products from the API
-    axios.get('http://localhost:8000/api/v1/products')
-      .then(response => {
+    axios
+      .get(`${backend}/api/v1/products`)
+      .then((response) => {
         setProducts(response.data); // Adjust based on your actual API response format
         setLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         setError(err.message);
         setLoading(false);
       });
@@ -35,7 +39,9 @@ const ChoclateCards = ({ selectedCategory, selectedPrice }) => {
     const filterProducts = () => {
       const categoryMatch = (product) => {
         if (selectedCategory === "All") return true;
-        return product.category.toLowerCase() === selectedCategory.toLowerCase();
+        return (
+          product.category.toLowerCase() === selectedCategory.toLowerCase()
+        );
       };
 
       const priceMatch = (price) => {
@@ -79,7 +85,7 @@ const ChoclateCards = ({ selectedCategory, selectedPrice }) => {
             >
               <div className="relative w-full pb-[75%]">
                 <img
-                  src={product.Image}
+                  src={convertImageToBase64(product.Image)}
                   alt={product.name}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -90,10 +96,11 @@ const ChoclateCards = ({ selectedCategory, selectedPrice }) => {
                 </h3>
                 <p className="text-gray-600 md:mt-4">₹{product.price}</p>
                 <p className="text-gray-600">Quantity: {product.quantity}</p>
-                <Link to="/shop/product/addtocart"
+                <Link
+                  to="/shop/product/addtocart"
                   className="inline-block"
                   onClick={() => {
-                    addToCart(product)
+                    addToCart(product);
                   }}
                 >
                   <button className="mt-4 py-2 px-4 bg-[#592D1E] text-white rounded-lg hover:bg-gray-800 text-sm sm:text-base">

@@ -13,15 +13,15 @@ const Checkout = () => {
   useEffect(() => {
     // Get JWT token from local storage
     const token = localStorage.getItem('authToken');
-    console.log(token);
+    // console.log(token);
     
     if (token) {
       try {
         // Decode the token to get the user data
         const decodedToken = jwtDecode(token);
-        console.log(decodedToken);
+        // console.log(decodedToken);
         setUserData(decodedToken);
-        console.log(userData);
+        // console.log(userData);
       } catch (error) {
         console.error('Invalid token:', error);
       }
@@ -66,16 +66,21 @@ const Checkout = () => {
     }
   
     const orderDetails = {
-      userId:userData.email, // Replace with the actual user ID
-      cartItems,
+      userId: userData.email,  // Replace with the actual user ID
+      cartItems: cartItems.map(item => ({
+        name: item.name,
+        quantity: item.quantity,
+        price: item.price
+      })),
       shippingInfo,
       totalPrice: getCartTotal() * 0.9,  // Calculate the total price after discount
     };
   
     try {
       // Make a POST request to create the order
-      const response = await axios.post("http://localhost:8000/api/v1/orders", orderDetails);
-      console.log("Order placed successfully:", response.data);
+      const response = await axios.post(`${backend}/api/v1/orders`, orderDetails);
+      alert("Order placed successfully:");
+      // console.log("Order placed successfully:", response.data);
   
       // Clear the cart and navigate to the payment confirmation page
       clearCart();

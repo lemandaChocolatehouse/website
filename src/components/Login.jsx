@@ -2,7 +2,10 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "./AuthContext";
 
+
 const Login = () => {
+
+  const backend = import.meta.env.VITE_BACKEND_URL;
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -23,7 +26,7 @@ const Login = () => {
     const { email, password } = formData;
 
     try {
-      const response = await fetch("http://localhost:8000/api/v1/users/login", {
+      const response = await fetch(`${backend}/api/v1/users/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,7 +46,7 @@ const Login = () => {
       }
     } catch (error) {
       setMessage("An error occurred. Please try again.");
-      console.log(error);
+      // console.log(error);
     }
   };
 

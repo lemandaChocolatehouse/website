@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const ProductForm = ({ product, closePopup, refreshProducts }) => {
+
+  const backend = import.meta.env.VITE_BACKEND_URL;
   const [formData, setFormData] = useState({
     name: product ? product.name : "",
     product_id: product ? product.product_id : "",
@@ -11,58 +13,48 @@ const ProductForm = ({ product, closePopup, refreshProducts }) => {
     quantity: product ? product.quantity : "",
     countInStock: product ? product.countInStock : 0,
   });
+
   const [mainImage, setMainImage] = useState(null);
-  const [images, setImages] = useState([]);
+  const [image1, setImage1] = useState(null);
+  const [image2, setImage2] = useState(null);
+  const [image3, setImage3] = useState(null);
   const [error, setError] = useState("");
 
-  // Update form data when product prop changes
   useEffect(() => {
     if (product) {
-      setFormData({ ...product });
+      setFormData({
+        name: product.name,
+        product_id: product.product_id,
+        desc: product.desc,
+        price: product.price,
+        category: product.category,
+        quantity: product.quantity,
+        countInStock: product.countInStock,
+      });
     }
-  }, [product]);
+  }, []);
 
-  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handle file uploads
   const handleFileChange = (e) => {
     const { name, files } = e.target;
     if (name === "Image") {
       setMainImage(files[0]);
-    } else if (name === "images") {
-      setImages(Array.from(files));
+    } else if (name === "Image1") {
+      setImage1(files[0]);
+    } else if (name === "Image2") {
+      setImage2(files[0]);
+    } else if (name === "Image3") {
+      setImage3(files[0]);
     }
   };
 
-  // Check if product_id exists
-  const checkProductIdExists = async (product_id) => {
-    try {
-      const response = await axios.get(`http://localhost:8000/api/v1/products?product_id=${product_id}`);
-      return response.data.length > 0; // If product_id exists in the response
-    } catch (error) {
-      console.error("Error checking product ID:", error);
-      return false;
-    }
-  };
-
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check if product_id exists (only for new products)
-    if (!product) {
-      const exists = await checkProductIdExists(formData.product_id);
-      if (exists) {
-        alert("Product ID already exists");
-        return;
-      }
-    }
-
-    // Create form data object for file uploads
     const data = new FormData();
     data.append("name", formData.name);
     data.append("product_id", formData.product_id);
@@ -71,43 +63,41 @@ const ProductForm = ({ product, closePopup, refreshProducts }) => {
     data.append("category", formData.category);
     data.append("quantity", formData.quantity);
     data.append("countInStock", formData.countInStock);
-    if (mainImage) data.append("Image", mainImage); // Add main image
-    images.forEach((image, index) => data.append(`images`, image)); // Add additional images
+    if (mainImage) data.append("Image", mainImage);
+    if (image1) data.append("Image1", image1);
+    if (image2) data.append("Image2", image2);
+    if (image3) data.append("Image3", image3);
 
     try {
-      if (product) {
-        // Update existing product
-        await axios.put(`http://localhost:8000/api/v1/products/${product._id}`, data, {
+      const res = await axios.put(
+        `${backend}/api/v1/products`,
+        data,
+        {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("authToken")}`,
             "Content-Type": "multipart/form-data",
           },
-        });
+        }
+      );
+      if (res.status === 201) {
         alert("Product updated successfully!");
-      } else {
-        // Create new product
-        await axios.post(`http://localhost:8000/api/v1/products`, data, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-            "Content-Type": "multipart/form-data",
-          },
-        });
-        alert("Product created successfully!");
+        refreshProducts();
       }
-      refreshProducts();
       closePopup();
     } catch (error) {
       console.error("Error saving product:", error);
-      setError("Failed to save product");
+      setError(error?.response?.data?.message ?? "Failed to save product");
     }
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-xl font-bold mb-4">{product ? "Edit Product" : "Create Product"}</h2>
+    <div className="fixed inset-0 overflow-y-auto max-h-[800px] flex items-center justify-center bg-gray-800 bg-opacity-50">
+      <div className="bg-white p-6 rounded-lg shadow-lg w-[70%]">
+        <h2 className="text-xl font-bold mb-4">
+          {product ? "Edit Product" : "Create Product"}
+        </h2>
         {error && <p className="text-red-500">{error}</p>}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="mt-[380px] ">
           {/* Editable fields */}
           <label className="block mb-4">
             Name:
@@ -129,7 +119,7 @@ const ProductForm = ({ product, closePopup, refreshProducts }) => {
               onChange={handleChange}
               className="block w-full mt-1 border border-gray-300 p-2 rounded"
               required
-              disabled={!!product} // Disable editing for existing product
+              disabled={!!product}
             />
           </label>
           <label className="block mb-4">
@@ -142,12 +132,29 @@ const ProductForm = ({ product, closePopup, refreshProducts }) => {
             />
           </label>
           <label className="block mb-4">
-            Additional Images:
+            Image 1:
             <input
               type="file"
-              name="images"
+              name="Image1"
               onChange={handleFileChange}
-              multiple
+              className="block w-full mt-1 border border-gray-300 p-2 rounded"
+            />
+          </label>
+          <label className="block mb-4">
+            Image 2:
+            <input
+              type="file"
+              name="Image2"
+              onChange={handleFileChange}
+              className="block w-full mt-1 border border-gray-300 p-2 rounded"
+            />
+          </label>
+          <label className="block mb-4">
+            Image 3:
+            <input
+              type="file"
+              name="Image3"
+              onChange={handleFileChange}
               className="block w-full mt-1 border border-gray-300 p-2 rounded"
             />
           </label>
@@ -206,10 +213,17 @@ const ProductForm = ({ product, closePopup, refreshProducts }) => {
           </label>
 
           {/* Action buttons */}
-          <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded mr-2">
+          <button
+            type="submit"
+            className="bg-blue-500 text-white py-2 px-4 rounded mr-2"
+          >
             {product ? "Save Changes" : "Create Product"}
           </button>
-          <button type="button" onClick={closePopup} className="bg-gray-500 text-white py-2 px-4 rounded">
+          <button
+            type="button"
+            onClick={closePopup}
+            className="bg-gray-500 text-white py-2 px-4 rounded"
+          >
             Cancel
           </button>
         </form>

@@ -8,6 +8,7 @@ import Footer from "./Footer";
 import AuthContext from "./AuthContext";
 import PropTypes from "prop-types";
 import { CartContext } from "./CartContext";
+import { convertImageToBase64 } from "../utils";
 
 const Cart = () => {
   const { cartItems, addToCart, removeFromCart, clearCart, getCartTotal } =
@@ -101,7 +102,7 @@ const Cart = () => {
                   <div className="food-section flex gap-7 items-center">
                     <div className="w-36 h-36 rounded-xl overflow-hidden">
                       <img
-                        src={item.Image}
+                        src={convertImageToBase64(item.Image)}
                         alt={item.name}
                         className="w-full h-full object-cover rounded-xl"
                       />

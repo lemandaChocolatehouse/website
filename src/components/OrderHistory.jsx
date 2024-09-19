@@ -3,6 +3,8 @@ import axios from 'axios';
 import { jwtDecode } from "jwt-decode"; // To decode the JWT token
 
 export const OrdersHistory = () => {
+
+    const backend = import.meta.env.VITE_BACKEND_URL;
     const [orders, setOrders] = useState([]);
     const [error, setError] = useState('');
 
@@ -17,12 +19,12 @@ export const OrdersHistory = () => {
             userEmail = decodedToken.email; // Extracting email from the decoded token
         }
 
-        console.log(userEmail);
+        // console.log(userEmail);
 
         // Fetch orders when the component loads
         const fetchOrders = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/v1/orders');
+                const response = await axios.get(`${backend}/api/v1/orders`);
                 // Filter orders for the logged-in user based on the email extracted from the JWT token
                 const userOrders = response.data.filter(order => order.user === userEmail);
                 setOrders(userOrders); // Save only the filtered orders

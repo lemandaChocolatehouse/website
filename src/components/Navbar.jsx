@@ -9,6 +9,7 @@ import AuthContext from "./AuthContext"; // Import AuthContext
 import { FaCartArrowDown, FaUserCircle } from "react-icons/fa";
 import {jwtDecode} from "jwt-decode"; // Correct import for jwtDecode
 import { MdDashboard } from "react-icons/md"; // Import dashboard icon
+import { CartContext } from "./CartContext"; // Import CartContext
 
 export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
   const { openModal } = useModal(); // Use openModal from context
@@ -16,6 +17,7 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [userEmail, setUserEmail] = useState(""); // Store userEmail state
   const dropdownRef = useRef(null);
+  const { cartItems, clearCart } = useContext(CartContext); // Access cartItems from context
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
@@ -31,7 +33,7 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
       setUserEmail(decodedToken.email); // Store email in state
     }
 
-    console.log(userEmail);
+    // console.log(userEmail);
   }, [isAuthenticated]); // Re-run when `isAuthenticated` changes
 
   // Close dropdown when clicking outside
@@ -130,6 +132,8 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
                   onClick={() => {
                     logout(); // Call logout function
                     handleLinkClick("Logout");
+                    clearCart(); // Clear cart on logout
+                    
                   }}
                 >
                   Logout

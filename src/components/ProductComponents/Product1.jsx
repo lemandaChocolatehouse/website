@@ -5,6 +5,7 @@ import { RiSubtractFill } from "react-icons/ri";
 import { IoMdAdd } from "react-icons/io";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { CartContext } from "../CartContext";
+import { convertImageToBase64 } from "../../utils";
 
 export const Product1 = () => {
   const location = useLocation();
@@ -12,7 +13,6 @@ export const Product1 = () => {
   const { product } = location.state || {}; // Get product data from location state
   const [quantity, setQuantity] = useState(1);
   const { cartItems, addToCart } = useContext(CartContext);
-
   const incrementQuantity = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
   };
@@ -59,22 +59,39 @@ export const Product1 = () => {
       <div className="product-image-section flex px-12">
         <div className="productdesc-left flex w-[50%] h-[82vh] justify-around p-5">
           <div className="hr-boxs w-[20%] h-full flex flex-col items-center justify-between mr-6">
-            {product.images.map((src, index) => (
-              <div
-                key={index}
-                className="hr-box w-40 h-40 rounded-3xl shadow-lg shadow-[#000000ab]"
-                style={{
-                  backgroundImage: `url(${src})`,
-                  backgroundSize: "cover",
-                }}
-              ></div>
-            ))}
+            <div
+              className="hr-box w-40 h-40 rounded-3xl shadow-lg shadow-[#000000ab]"
+              style={{
+                backgroundImage: `url(${convertImageToBase64(
+                  product?.Image1
+                )})`,
+                backgroundSize: "cover",
+              }}
+            />
+            <div
+              className="hr-box w-40 h-40 rounded-3xl shadow-lg shadow-[#000000ab]"
+              style={{
+                backgroundImage: `url(${convertImageToBase64(
+                  product?.Image2
+                )})`,
+                backgroundSize: "cover",
+              }}
+            />
+            <div
+              className="hr-box w-40 h-40 rounded-3xl shadow-lg shadow-[#000000ab]"
+              style={{
+                backgroundImage: `url(${convertImageToBase64(
+                  product?.Image3
+                )})`,
+                backgroundSize: "cover",
+              }}
+            />
           </div>
 
           <div
             className="productdesc-left-right w-[76%] h-full bg-[#c4c4c4] rounded-3xl shadow-lg shadow-[#000000ab] bg-cover bg-center"
             style={{
-              backgroundImage: `url(${product.Image})`,
+              backgroundImage: `url(${convertImageToBase64(product?.Image)})`,
             }}
           ></div>
         </div>

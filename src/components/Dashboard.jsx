@@ -3,14 +3,22 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { RiStickyNoteAddFill } from "react-icons/ri";
 import ProductForm from "./ProductForm"; // Import the ProductForm component
+import { convertImageToBase64 } from "../utils";
 
 const Dashboard = () => {
+
+  const backend = import.meta.env.VITE_BACKEND_URL;
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [currentProduct, setCurrentProduct] = useState(null);
-  const [formData, setFormData] = useState({});
+  const [formDataValues, setFormDataValues] = useState({});
+  const [mainImage, setMainImage] = useState(null);
+  const [Image1, setImage1] = useState(null);
+  const [Image2, setImage2] = useState(null);
+  const [Image3, setImage3] = useState(null);
+  const [orders, setOrders] = useState([]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -20,7 +28,7 @@ const Dashboard = () => {
   useEffect(() => {
     // Fetch products from the API
     axios
-      .get("http://localhost:8000/api/v1/products")
+      .get(`${backend}/api/v1/products`)
       .then((response) => {
         setProducts(response.data); // Adjust based on your actual API response format
         setLoading(false);
@@ -45,7 +53,7 @@ const Dashboard = () => {
     try {
       // Ensure to include the authentication token if required
       const response = await axios.delete(
-        `http://localhost:8000/api/v1/products/${product._id}`,
+        `${backend}/api/v1/products/${product._id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("authToken")}`, // Use localStorage or other method to get the token
@@ -53,7 +61,7 @@ const Dashboard = () => {
         }
       );
 
-      console.log(response.data);
+      // console.log(response.data);
 
       // Update the products state by filtering out the deleted product
       setProducts(products.filter((item) => item._id !== product._id));
@@ -65,38 +73,51 @@ const Dashboard = () => {
     }
   };
 
-  const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    if (name === "images") {
-      setFormData((prevFiles) => ({
-        ...prevFiles,
-        [name]: [...files],
-      }));
-    } else if (name === "Image") {
-      setFormData((prevFiles) => ({
-        ...prevFiles,
-        [name]: files[0] || null,
-      }));
-    } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
+  const handleImageChange = (e) => {
+    if (e.target.name === "Image") {
+      setMainImage(e.target.files[0]);
     }
+    if (e.target.name === "Image1") {
+      setImage1(e.target.files[0]);
+    }
+    if (e.target.name === "Image2") {
+      setImage2(e.target.files[0]);
+    }
+    if (e.target.name === "Image3") {
+      setImage3(e.target.files[0]);
+    }
+  };
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setFormDataValues({ ...formDataValues, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const formData = new FormData();
+
+    formData.append("name", formDataValues.name);
+    formData.append("product_id", formDataValues.product_id);
+    formData.append("desc", formDataValues.desc);
+    formData.append("price", formDataValues.price);
+    formData.append("category", formDataValues.category);
+    formData.append("quantity", formDataValues.quantity);
+    formData.append("countInStock", formDataValues.countInStock);
+    if (mainImage) formData.append("Image", mainImage);
+    if (Image1) formData.append("Image1", Image1);
+    if (Image2) formData.append("Image2", Image2);
+    if (Image3) formData.append("Image3", Image3);
+
     try {
-      if (formData.images.length > 3) {
-        alert("You can upload a maximum of 3 images");
-        return;
-      }
       // Make a POST request to create the product
       const response = await axios.post(
-        "http://localhost:8000/api/v1/products",
-        JSON.stringify(formData),
+        `${backend}/api/v1/products`,
+        formData,
         {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-            "Content-Type": "application/json",
+            "Content-Type": "multipart/form-data",
           },
         }
       );
@@ -114,16 +135,38 @@ const Dashboard = () => {
       }
     } catch (error) {
       console.error("Error creating product:", error);
-      alert("Failed to create product");
+      alert(error?.response?.data?.message ?? "Failed to create product");
       // Optionally display an error message to the user
     }
   };
+
+  useEffect(() => {
+    // Fetch orders when the component loads
+    const fetchOrders = async () => {
+        try {
+            const response = await axios.get(`${backend}/api/v1/orders`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('authToken')}`, // Assuming you're using a token
+                },
+            });
+
+            // Set all the orders without filtering by user email
+            setOrders(response.data);
+        } catch (err) {
+            console.error('Error fetching orders:', err);
+            setError('Failed to load orders');
+        }
+    };
+
+    fetchOrders();
+}, []);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
     <div>
+      <div>
       <div>
         {/* Icon to open the modal */}
         <div className="h-[300px] flex justify-center items-center mt-10">
@@ -267,7 +310,7 @@ const Dashboard = () => {
                     </label>
                     <input
                       onChange={handleChange}
-                      type="number"
+                      type="text"
                       id="quantity"
                       name="quantity"
                       required
@@ -306,7 +349,7 @@ const Dashboard = () => {
                       id="Image"
                       name="Image"
                       accept="image/*"
-                      onChange={handleChange}
+                      onChange={handleImageChange}
                       required
                       className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
                     />
@@ -315,19 +358,52 @@ const Dashboard = () => {
                   {/* Additional Images */}
                   <div>
                     <label
-                      htmlFor="images"
+                      htmlFor="Image1"
                       className="block text-sm font-medium text-gray-700"
                     >
-                      Additional Images:
+                      Image 1:
                     </label>
                     <input
                       type="file"
-                      id="images"
-                      name="images"
-                      onChange={handleChange}
-                      accept="image/*"
-                      multiple
-                      max={5}
+                      id="Image1"
+                      name="Image1"
+                      accept="image1/*"
+                      onChange={handleImageChange}
+                      required
+                      className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="Image2"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Image 2:
+                    </label>
+                    <input
+                      type="file"
+                      id="Image2"
+                      name="Image2"
+                      accept="image2/*"
+                      onChange={handleImageChange}
+                      required
+                      className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="Image3"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Image 3:
+                    </label>
+                    <input
+                      type="file"
+                      id="Image3"
+                      name="Image3"
+                      accept="image3/*"
+                      onChange={handleImageChange}
+                      required
                       className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
                     />
                   </div>
@@ -347,26 +423,28 @@ const Dashboard = () => {
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-6 lg:gap-8 mx-4 mt-20">
         {products.length > 0 ? (
-          products.map((item) => (
-            <div
-              key={item._id}
-              className="card border rounded-lg overflow-hidden shadow-lg flex flex-col col-span-1"
-            >
-              <div className="relative w-full pb-[75%]">
-                <img
-                  src={item.Image}
-                  alt={item.name}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-4 flex-grow">
-                <h3 className="mq450:text-sm md:text-base font-bold h-[60px] md:h-[40px]">
-                  {item.name}
-                </h3>
-                <p className="text-gray-600 md:mt-4">₹{item.price}</p>
-                <p className="text-gray-600">Quantity: {item.quantity}</p>
-                <div className="flex flex-col">
-                  {/* <Link
+          products.map((item) => {
+            return (
+              <div
+                key={item._id}
+                className="card border rounded-lg overflow-hidden shadow-lg flex flex-col col-span-1"
+              >
+                <div className="relative w-full pb-[75%]">
+                  {/* Display main image */}
+                  <img
+                    src={convertImageToBase64(item.Image)} // Base64 image
+                    alt={item.name}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-4 flex-grow">
+                  <h3 className="mq450:text-sm md:text-base font-bold h-[60px] md:h-[40px]">
+                    {item.name}
+                  </h3>
+                  <p className="text-gray-600 md:mt-4">₹{item.price}</p>
+                  <p className="text-gray-600">Quantity: {item.quantity}</p>
+                  <div className="flex flex-col">
+                    {/* <Link
                     to="/shop/product/addtocart"
                     className="inline-block"
                   >
@@ -374,22 +452,23 @@ const Dashboard = () => {
                       Add to Cart
                     </button>
                   </Link> */}
-                  <button
-                    onClick={() => openPopup(item)}
-                    className="w-full mt-4 rounded-md text-sm sm:text-base bg-blue-500 text-white font-bold px-4 py-2"
-                  >
-                    Edit
-                  </button>
-                  <button
-                    onClick={() => deleteProduct(item)}
-                    className="w-full mt-4 rounded-md text-sm sm:text-base bg-red-500 text-white font-bold px-4 py-2"
-                  >
-                    Delete
-                  </button>
+                    <button
+                      onClick={() => openPopup(item)}
+                      className="w-full mt-4 rounded-md text-sm sm:text-base bg-blue-500 text-white font-bold px-4 py-2"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      onClick={() => deleteProduct(item)}
+                      className="w-full mt-4 rounded-md text-sm sm:text-base bg-red-500 text-white font-bold px-4 py-2"
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))
+            );
+          })
         ) : (
           <p>You have not added any products yet.</p>
         )}
@@ -401,11 +480,53 @@ const Dashboard = () => {
           closePopup={closePopup}
           refreshProducts={() => {
             axios
-              .get("http://localhost:8000/api/v1/products")
+              .get(`${backend}/api/v1/products`)
               .then((response) => setProducts(response.data));
           }}
         />
       )}
+    </div>
+    <div>
+    <div className="w-full px-5 py-10 bg-white">
+            <h1 className="text-3xl font-bold mb-6 flex justify-center">Order History</h1>
+            {orders.length > 0 ? (
+                <table className="min-w-full table-auto border-collapse">
+                    <thead>
+                        <tr className="bg-gray-200">
+                            <th className="border px-4 py-2">Order ID</th>
+                            <th className="border px-4 py-2">User</th>
+                            <th className="border px-4 py-2">Items</th>
+                            <th className="border px-4 py-2">Total Price</th>
+                            <th className="border px-4 py-2">Status</th>
+                            <th className="border px-4 py-2">Created At</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {orders.map((order) => (
+                            <tr key={order._id} className="hover:bg-gray-100 text-center">
+                                <td className="border px-4 py-2">{order._id}</td>
+                                <td className="border px-4 py-2">{order.user}</td>
+                                <td className="border px-4 py-2">
+                                    {order.items.map((item, index) => (
+                                        <div key={index}>
+                                            {item.name} (x{item.quantity}) - ₹{item.price}
+                                        </div>
+                                    ))}
+                                </td>
+                                <td className="border px-4 py-2">₹{order.totalPrice}</td>
+                                <td className="border px-4 py-2">{order.status}</td>
+                                <td className="border px-4 py-2">
+                                    {new Date(order.createdAt).toLocaleString()}
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            ) : (
+                <p>No orders found for this user.</p>
+            )}
+        </div>
+    </div>
     </div>
   );
 };

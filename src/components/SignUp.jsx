@@ -6,6 +6,8 @@ const Signup = () => {
   
   const navigate = useNavigate();
 
+  const backend = import.meta.env.VITE_BACKEND_URL;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,7 +29,7 @@ const Signup = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:8000/api/v1/users/signup",
+        `${backend}/api/v1/users/signup`,
         {
           method: "POST",
           headers: {

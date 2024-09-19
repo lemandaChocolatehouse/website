@@ -8,6 +8,7 @@ import Cake6 from "/assets/img/dark.jpg";
 import Cake7 from "/assets/img/milk.jpg";
 import Cake8 from "/assets/img/pista.jpg";
 import { CartContext} from '../CartContext';// Import useCart hook to manage cart
+import { convertImageToBase64 } from '../../utils';
 
 const initialCardData = [
   { product_id: 25,name: "CRACKLE CHOCLATE", desc: "Rich and creamy chocolate with a hint of roasted nuts. Perfect for a sweet indulgence.", Image: Cake3, price: 110, originalPrice: 140 },

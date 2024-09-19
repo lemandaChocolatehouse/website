@@ -2,6 +2,7 @@
 import { useEffect, useState , useContext} from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
+import { convertImageToBase64 } from "../utils";
 
 const Wishlist = () => {
   const [wishlist, setWishlist] = useState([]);
@@ -35,7 +36,7 @@ const Wishlist = () => {
             >
               <div className="relative w-full pb-[75%]">
                 <img
-                  src={item.Image}
+                  src={convertImageToBase64(item.Image)}
                   alt={item.name}
                   className="absolute inset-0 w-full h-full object-cover"
                 />

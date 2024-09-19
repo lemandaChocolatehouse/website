@@ -5,8 +5,11 @@ import Heading3 from "/assets/img/heading3.png";
 import { CartContext } from "../CartContext";
 import axios from "axios";
 import Cart from "../Cart";
+import { convertImageToBase64 } from "../../utils";
 
 const Section3 = () => {
+
+  const backend = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
   const navigate = useNavigate();
   const [category, setCategory] = useState("ALL");
   const [products, setProducts] = useState([]); // Initialize as an empty array
@@ -14,12 +17,14 @@ const Section3 = () => {
   const [error, setError] = useState(null);
   const { cartItems, addToCart } = useContext(CartContext)
 
+  
+
 
 
   useEffect(() => {
     // Fetch products from the API
     axios
-      .get("http://localhost:8000/api/v1/products")
+      .get(`${backend}/api/v1/products`)
       .then((response) => {
         // Assuming the response data is an array of products directly
         setProducts(response.data);
@@ -153,7 +158,7 @@ const Section3 = () => {
                     >
                       <img
                         className="scale-[0.8]"
-                        src={item.Image}
+                        src={convertImageToBase64(item.Image)}
                         alt={item.name}
                       />
                     </div>
