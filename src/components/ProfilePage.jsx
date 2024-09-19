@@ -10,13 +10,13 @@ export const ProfilePage = () => {
   useEffect(() => {
     // Get JWT token from local storage
     const token = localStorage.getItem('authToken');
-    // console.log(token);
+    console.log(token);
     
     if (token) {
       try {
         // Decode the token to get the user data
         const decodedToken = jwtDecode(token);
-        // console.log(decodedToken);
+        console.log(decodedToken);
         setUserData(decodedToken);
         // console.log(userData);
       } catch (error) {
