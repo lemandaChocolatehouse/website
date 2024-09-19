@@ -16,9 +16,9 @@ export const ProfilePage = () => {
       try {
         // Decode the token to get the user data
         const decodedToken = jwtDecode(token);
-        // console.log(decodedToken);
+        console.log(decodedToken);
         setUserData(decodedToken);
-        // console.log(userData);
+        console.log(userData);
       } catch (error) {
         console.error('Invalid token:', error);
       }
