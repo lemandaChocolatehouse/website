@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { jwtDecode } from "jwt-decode"; // To decode the JWT token
 
- const OrdersHistory = () => {
+export const OrdersHistory = () => {
 
     const backend = import.meta.env.VITE_BACKEND_URL;
     const [orders, setOrders] = useState([]);
@@ -84,4 +84,3 @@ import { jwtDecode } from "jwt-decode"; // To decode the JWT token
     );
 };
 
-export default OrdersHistory;
