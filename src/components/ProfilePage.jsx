@@ -10,7 +10,7 @@ export const ProfilePage = () => {
   useEffect(() => {
     // Get JWT token from local storage
     const token = localStorage.getItem('authToken');
-    // console.log(token);
+    console.log(token);
     
     if (token) {
       try {
