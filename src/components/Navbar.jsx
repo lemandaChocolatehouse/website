@@ -58,7 +58,7 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
       </Link>
 
       {/* Navigation Links */}
-      <div className="nav_links flex gap-20 px-10 py-2 border-2 border-[#000] rounded-full font-medium">
+      <div className="nav_links flex gap-20 px-10 py-2 border-2 border-[#000] rounded-full font-medium ml-40">
         {["Home", "About", "Product", "Contact"].map((item, index) => (
           <Link
             className={`${activeLink === item ? "active" : ""}`}
@@ -81,21 +81,21 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
       </div>
 
       {/* Shop Button, Heart Icon, and Hamburger Menu */}
-      <div className="nav-btn flex items-center gap-3">
+      <div className=" flex items-center gap-1 md:gap-3">
         <Link
           to="/wishlist"
-          className="text-[#592D1E] text-2xl"
+          className="text-[#592D1E] text-2xl ml-4"
           onClick={() => handleLinkClick("Wishlist")}
         >
-          <FaHeart />
+          <FaHeart size={20}/>
         </Link>
-        <Link to="/shop/product/addtocart" className="mx-4">
+        <Link to="/shop/product/addtocart" className="mq450:mx-1 mx-4">
           <FaCartArrowDown size={24} color="#592d1e" />
         </Link>
 
         <Link
           to="/shop"
-          className="px-7 py-2 rounded-full bg-[#592D1E] text-white font-black shadow-md shadow-[#0000005a]"
+          className="px-7 py-2 rounded-full bg-[#592D1E] text-white font-black shadow-md shadow-[#0000005a] hidden md:block"
           onClick={() => handleLinkClick("Shop")}
         >
           SHOP
