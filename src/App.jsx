@@ -71,13 +71,13 @@ const App = () => {
           </div>
 
           <Routes>
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/signup-page" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/shop/product" element={<ProductDesc />} />
             <Route path="/shop/product/addtocart" element={<Cart />} />
             <Route path="/shop" element={<Product />} />
             <Route path="/about" element={<About />} />
-            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/profile-page" element={<ProfilePage />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/wishlist" element={<Wishlist />} />{" "}
             <Route path="/checkout" element={<Checkout />} />

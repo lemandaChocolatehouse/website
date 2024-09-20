@@ -121,7 +121,7 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
             {dropdownOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2">
                 <a
-                  href="/profile"
+                  href="/profile-page"
                   className="flex justify-center px-4 py-2 text-gray-800 hover:bg-gray-200"
                 >
                   View Profile
