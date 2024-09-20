@@ -20,6 +20,13 @@ const Dashboard = () => {
   const [Image3, setImage3] = useState(null);
   const [orders, setOrders] = useState([]);
 
+  const [isGridVisible, setGridVisible] = useState(false);
+
+  // Toggle grid visibility
+  const toggleGridVisibility = () => {
+    setGridVisible(!isGridVisible);
+  };
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -169,9 +176,9 @@ const Dashboard = () => {
       <div>
       <div>
         {/* Icon to open the modal */}
-        <div className="h-[300px] flex justify-center items-center mt-10">
+        <div className="h-[150px] flex justify-center items-center mt-40">
           <div
-            className="border-2 border-gray-400 cursor-pointer p-4"
+            className="border-2 border-gray-400 cursor-pointer p-8 rounded-3xl"
             onClick={openModal}
           >
             <RiStickyNoteAddFill size={150} />
@@ -421,6 +428,15 @@ const Dashboard = () => {
           </div>
         )}
       </div>
+      <div className="mt-20 w-full flex flex-col justify-center items-center">
+      <button
+        onClick={toggleGridVisibility}
+        className="w-[20%] flex justify-center mb-4 py-2 bg-[#592d1e] text-white rounded-md hover:bg-[#421d11]"
+      >
+        {isGridVisible ? 'Hide Products' : 'Manage Products'}
+      </button>
+
+      {isGridVisible && (
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-6 lg:gap-8 mx-4 mt-20">
         {products.length > 0 ? (
           products.map((item) => {
@@ -429,7 +445,7 @@ const Dashboard = () => {
                 key={item._id}
                 className="card border rounded-lg overflow-hidden shadow-lg flex flex-col col-span-1"
               >
-                <div className="relative w-full pb-[75%]">
+                <div className="relative w-full pb-[55%]">
                   {/* Display main image */}
                   <img
                     src={convertImageToBase64(item.Image)} // Base64 image
@@ -438,11 +454,11 @@ const Dashboard = () => {
                   />
                 </div>
                 <div className="p-4 flex-grow">
-                  <h3 className="mq450:text-sm md:text-base font-bold h-[60px] md:h-[40px]">
+                  <h3 className="text-sm md:text-base font-bold h-[60px] md:h-[40px]">
                     {item.name}
                   </h3>
-                  <p className="text-gray-600 md:mt-4">₹{item.price}</p>
-                  <p className="text-gray-600">Quantity: {item.quantity}</p>
+                  <p className="text-sm text-gray-600">₹{item.price}</p>
+                  <p className="text-sm text-gray-600">Quantity: {item.quantity}</p>
                   <div className="flex flex-col">
                     {/* <Link
                     to="/shop/product/addtocart"
@@ -454,13 +470,13 @@ const Dashboard = () => {
                   </Link> */}
                     <button
                       onClick={() => openPopup(item)}
-                      className="w-full mt-4 rounded-md text-sm sm:text-base bg-blue-500 text-white font-bold px-4 py-2"
+                      className="w-full mt-4 rounded-md text-sm sm:text-base bg-blue-500 text-white font-bold  py-1"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => deleteProduct(item)}
-                      className="w-full mt-4 rounded-md text-sm sm:text-base bg-red-500 text-white font-bold px-4 py-2"
+                      className="w-full mt-2 rounded-md text-sm sm:text-base bg-red-500 text-white font-bold py-1"
                     >
                       Delete
                     </button>
@@ -473,6 +489,8 @@ const Dashboard = () => {
           <p>You have not added any products yet.</p>
         )}
       </div>
+       )}
+    </div>
 
       {isPopupOpen && currentProduct && (
         <ProductForm
