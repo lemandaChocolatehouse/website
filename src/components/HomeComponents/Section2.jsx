@@ -9,8 +9,8 @@ import Paragraph from "/assets/img/Paragraph.png"; // Import new paragraph image
 const Section2 = () => {
   return (
     <div className="section2 w-full flex items-center justify-center gap-5 px-7 py-10 pt-28 bg-[#fff] relative">
-      <div className="section2-in shadow-xl shadow-[#94949493] w-[25%] h-[75vh] bg-[#dadada] rounded-[4.5vw] flex flex-col relative">
-        <img className="biscuit-1 ml-6  absolute -top-24" src={BigCake} alt="Big Cake" />
+      <div className="section2-in shadow-xl flex items-center shadow-[#94949493] w-[25%] h-[75vh] bg-[#dadada] rounded-[4.5vw]  flex-col relative">
+        <img className="biscuit-1  absolute -top-24" src={BigCake} alt="Big Cake" />
         <h1 className="absolute bottom-5 left-7 text-4xl font-semibold flex items-center text-white">03<span className="text-2xl font-normal">/07</span></h1>
       </div>
       <div className="section2-in-2 flex flex-col justify-center w-[40%] h-[90%] rounded items-center pl-14">
