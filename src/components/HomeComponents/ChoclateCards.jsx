@@ -92,7 +92,7 @@ const ChoclateCards = ({ selectedCategory, selectedPrice }) => {
                 />
               </div>
               <div className="p-4 flex-grow">
-                <h3 className="text-sm md:text-xl font-bold h-[60px] md:h-[40px]">
+                <h3 className="text-sm md:text-xl font-bold h-[60px] md:h-[40px] font-beach">
                   {product.name}
                 </h3>
                 <p className="text-gray-600 md:mt-4">₹{product.price}</p>
@@ -112,8 +112,8 @@ const ChoclateCards = ({ selectedCategory, selectedPrice }) => {
             </div>
           ))
         ) : (
-          <p className="col-span-full text-center text-gray-500">
-            No products found.
+          <p className="col-span-full text-center font-bold my-10 text-[#592d1e]">
+            Choose another Delight!!!
           </p>
         )}
       </div>

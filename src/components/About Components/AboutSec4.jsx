@@ -5,11 +5,11 @@ const AboutSec4 = () => {
     <div className="about-sec4 w-full py-8 bg-[#f5f5f5] px-20">
       <div className="about-sec4-top w-full flex items-end justify-between">
         <div>
-          <h3 className="text-2xl font-black text-[#592D1E]">FAQ</h3>
-          <h1 className="text-3xl font-black mt-5">FREQUENTLY ASKED QUESTIONS</h1>
+          <h3 className="text-2xl  text-[#592D1E]">FAQ</h3>
+          <h1 className="text-3xl  mt-5">FREQUENTLY ASKED QUESTIONS</h1>
         </div>
-        <p className="text-lg text-[grey] font-semibold">
-          Provide convenience services with attractive <br /> and fun options.
+        <p className="text-lg text-[grey] roboto-r">
+          Provide convenience services with attractive  and fun options.
         </p>
       </div>
       <div className="about-sec4-btm w-full h-fit flex gap-10 mt-8">
@@ -43,9 +43,9 @@ const AboutSec4 = () => {
               <div className="w-12 h-12 flex items-center justify-center bg-[#592D1E] text-white rounded-full font-semibold">
                 {item.id}
               </div>
-              <div>
-                <h1 className="font-black text mb-1">{item.name}</h1>
-                <p className="text-[grey]">{item.para}</p>
+              <div className="w-[80%]">
+                <h1 className=" text-lg mb-1">{item.name}</h1>
+                <p className="text-[grey] roboto-r">{item.para}</p>
               </div>
             </div>
           ))}

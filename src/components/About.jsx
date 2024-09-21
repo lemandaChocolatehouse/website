@@ -7,7 +7,7 @@ import Footer from './Footer'
 
 const About = () => {
   return (
-    <div className='about w-full pt-16'>
+    <div className='about w-full pt-16 bebas tracking-wider'>
         <AboutSection1/>
         <AboutSection2/>
         <AboutSec3/>

@@ -4,7 +4,7 @@ import Cake3 from "/assets/img/cake3.png";
 
 const Section4 = () => {
   return (
-    <div className="section4 w-full px-7 py-10 pt-20 bg-[#fff] flex flex-col items-center gap-5">
+    <div className="section4 w-full px-7 py-10 pt-20 bg-[#fff] flex flex-col items-center gap-5 font-beach">
       <div className="section4-child1 w-[85%] flex justify-between">
       <div className="section4-para w-1/3">
         <p className="text-[#a47261] text-lg font-semibold">Indulge in our bakery's offerings, where every item is a testament to wholesome ingredients and genuine baking practices.

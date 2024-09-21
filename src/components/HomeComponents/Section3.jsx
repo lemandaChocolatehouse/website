@@ -8,18 +8,13 @@ import Cart from "../Cart";
 import { convertImageToBase64 } from "../../utils";
 
 const Section3 = () => {
-
-  const backend = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
+  const backend = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
   const navigate = useNavigate();
   const [category, setCategory] = useState("ALL");
   const [products, setProducts] = useState([]); // Initialize as an empty array
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { cartItems, addToCart } = useContext(CartContext)
-
-  
-
-
+  const { cartItems, addToCart } = useContext(CartContext);
 
   useEffect(() => {
     // Fetch products from the API
@@ -58,9 +53,12 @@ const Section3 = () => {
             display: flex;
             flex-direction: row;
             gap: 2rem;
-            padding: 1rem;
-            animation: scroll 50s linear infinite;
-          }
+            padding: 1rem;;
+           overflow-x: auto; 
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+        }
+            
           .choc-card {
             flex: 0 0 auto;
             width: 20rem;
@@ -86,9 +84,10 @@ const Section3 = () => {
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
             text-decoration: none;
-            display: inline-block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-size: 1rem;
-            font-weight: 500;
             transition: background-color 1s ease;
           }
           .view-detail-button:hover {
@@ -115,11 +114,11 @@ const Section3 = () => {
         `}
       </style>
 
-      <div className="section3 w-full py-10 pb-14 text-center">
+      <div className="section3 w-full py-10 pb-14 text-center ">
         <div className="w-full flex items-center justify-center pb-7">
           <img className="heading-3 w-1/2" src={Heading3} alt="Heading" />
         </div>
-        <div className="section3-links flex items-center justify-center gap-3 w-full p-5">
+        <div className="section3-links flex text-[12px] md:text-2xl items-center justify-center md:gap-3 w-full md:p-5 py-6 md:py-1 bebas tracking-widest">
           {["ALL", "CHOCOLATE", "COOKIES", "CAKE"].map((item) => (
             <button
               className={`px-6 py-2 ${
@@ -138,9 +137,11 @@ const Section3 = () => {
         </div>
 
         {loading ? (
-          <p>Loading products...</p>
+          <p className="w-full flex justify-center">Crafting delights...</p>
         ) : error ? (
-          <p>Error loading products: {error}</p>
+          <p className="w-full flex justify-center">
+            Error loading products: {error}
+          </p>
         ) : (
           <div className="choclate-cards-container">
             <div className="choclate-cards-wrapper">
@@ -166,15 +167,15 @@ const Section3 = () => {
                       onClick={() =>
                         navigate(`/shop/product`, { state: { product: item } })
                       }
-                      className="text-xl cursor-pointer font-serif"
+                      className="text-xl cursor-pointer font-beach"
                     >
                       {item.name}
                     </h1>
-                    <p className="hidden md:block font-serif px-9 text-sm text-center choc-card-description">
+                    <p className="hidden font-beach md:block  px-9 text-base text-center choc-card-description">
                       {item.desc}
                     </p>
                     <Link
-                      className="view-detail-button mt-4 pb-1"
+                      className="view-detail-button mt-4 pb-1 font-beach"
                       to={`/shop/product/`}
                       state={{ product: item }}
                     >
@@ -182,7 +183,7 @@ const Section3 = () => {
                     </Link>
                     <button
                       onClick={() => {
-                        addToCart(item)
+                        addToCart(item);
                         navigate("/shop/product/addtocart");
                       }}
                       className="choc-card-price shadow-md shadow-black absolute -top-4 -right-6 w-20 h-20 rounded-full bg-[#592D1E] flex items-center justify-center text-white text-3xl font-serif font-bold"

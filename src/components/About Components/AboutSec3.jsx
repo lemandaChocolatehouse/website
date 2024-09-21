@@ -4,10 +4,10 @@ const AboutSec3 = () => {
   return (
     <div className='about-sec3 w-full pt-12 pb-10 bg-[#f5f5f5] px-5'>
       <div className="about-section2-top w-full py-10 px-2 text-center">
-        <h2 className="text-3xl font-bold text-[#592D1E] tracking-tight">
+        <h2 className="text-3xl  text-[#592D1E] ">
           OUR TEAMS
         </h2>
-        <h1 className="font-bold text-4xl mb-3 mt-3 tracking-tight">
+        <h1 className=" text-4xl mb-3 mt-3 ">
           GREAT TEAM IN DIFFERENT SKILL
         </h1>
       </div>

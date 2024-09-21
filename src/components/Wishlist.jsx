@@ -24,7 +24,7 @@ const Wishlist = () => {
 
   return (
     <div>
-      <h1 className="text-center text-2xl md:text-3xl font-bold text-[#592d1e] mt-20 mb-10 my-6">
+      <h1 className="text-center text-2xl md:text-3xl font-bold text-[#592d1e] mt-20 mb-10 my-6 bebas">
         Your Wishlist
       </h1>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6 lg:gap-8 mx-4">

@@ -3,9 +3,9 @@
 const Section6 = () => {
   return (
     <div className="w-full">
-      <div className="reviews-section w-full p-20 flex items-center justify-center gap-14">
+      <div className="reviews-section w-full p-20 flex items-center justify-center gap-14 bebas">
         <div className="review-left w-[50%] h-[80vh] px-8 pt-10 py-6 flex flex-col gap-6">
-          <h1 className="text-7xl font-bold text-center">TESTIMONY</h1>
+          <h1 className="text-8xl tracking-wider text-[#592d1e] text-center">TESTIMONY</h1>
           <p className="text-[grey] text-center">Explore what people are saying about us</p>
           <div className="customer-review h-fit overflow-auto px-4">
           {[
@@ -26,7 +26,7 @@ const Section6 = () => {
             },
 
           ].map((item, index)=>(
-            <div key={index} className="review-left-customer shrink-0 mt-5 mb-10">
+            <div key={index} className="review-left-customer shrink-0 mt-5 mb-10 ">
             <div className="w-fit flex items-center px-3 py-2 gap-4 bg-white rounded-full shadow-xl shadow-[#dadada]">
               <div className="w-12 h-12 rounded-full bg-[#c7c9d9]"></div>
                <div className="pr-3">
@@ -34,7 +34,7 @@ const Section6 = () => {
                   <h2 className="font-semibold text-yellow-400">{item.rating}/5 STAR</h2>
                </div>
             </div>
-               <p className="w-full bg-white px-5 py-2 rounded-full mt-2 text-sm text-[grey] shadow-xl shadow-[#dadada]">{item.desc}</p>
+               <p className="w-full bg-white px-5 py-2 rounded-full mt-2 text-sm text-[grey] shadow-xl roboto-italic shadow-[#dadada]">{item.desc}</p>
         </div>
           ))}
           </div>

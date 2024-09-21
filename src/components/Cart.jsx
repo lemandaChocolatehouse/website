@@ -73,9 +73,9 @@ const Cart = () => {
   };
 
   return (
-    <div className="food-about w-full pt-16 bg-[#F5F5F5]">
+    <div className="food-about w-full pt-16 bg-[#F5F5F5] bebas tracking-wider">
       <div className="food-about-top w-full px-5 pt-12">
-        <h1 className="text-5xl tracking-tight font-semibold">MY CART</h1>
+        <h1 className="text-5xl tracking-wider">MY CART</h1>
         <div className="w-full flex items-center justify-between px-5 py-3 border border-[#dadada] rounded-xl mt-5">
           <button
             className="px-7 py-2 text-md rounded-full bg-[#dadada]"
@@ -109,7 +109,9 @@ const Cart = () => {
                     </div>
 
                     <div>
-                      <h1 className="text-xl font-bold">{item.name}</h1>
+                      <h1 className="text-2xl font-semibold tracking-wider">
+                        {item.name}
+                      </h1>
                       <div className="remove-cart flex items-center gap-6 mt-3">
                         <button
                           className="flex items-center gap-1 text-red-600"
@@ -130,34 +132,36 @@ const Cart = () => {
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-center gap-3 mr-5">
-                    <h2 className="text-xl">QUANTITY</h2>
-                    <div className="flex items-center gap-4">
-                      <button
-                        className="w-6 h-6 rounded-full border border-[#dadada] flex items-center justify-center cursor-pointer"
-                        onClick={() => removeFromCart(item)}
-                      >
-                        <RiSubtractFill />
-                      </button>
-                      {item.quantity}
-                      <button
-                        className="w-6 h-6 rounded-full border border-[#dadada] flex items-center justify-center cursor-pointer"
-                        onClick={() => addToCart(item)}
-                      >
-                        <IoMdAdd />
-                      </button>
+                  <div className="flex md:flex-col items-center justify-center md:justify-start gap-10 md:gap-3 mr-5">
+                    <div className="flex flex-col items-center">
+                      <h2 className="text-xl my-4">QUANTITY</h2>
+                      <div className="flex items-center gap-4">
+                        <button
+                          className="w-6 h-6 rounded-full border border-[#dadada] flex items-center justify-center cursor-pointer"
+                          onClick={() => removeFromCart(item)}
+                        >
+                          <RiSubtractFill />
+                        </button>
+                        {item.quantity}
+                        <button
+                          className="w-6 h-6 rounded-full border border-[#dadada] flex items-center justify-center cursor-pointer"
+                          onClick={() => addToCart(item)}
+                        >
+                          <IoMdAdd />
+                        </button>
+                      </div>
                     </div>
-                    <h1 className="flex items-center gap-3">
+                    <h1 className="flex flex-col justify-center items-center gap-3">
                       <span className="line-through text-[grey]">
-                        ₹{item.prevPrice}
+                        {item.prevPrice}
                       </span>
+                      <h3 className="text-[grey] font-medium text-md">
+                        You save {item.savePricePercent}
+                      </h3>
                       <span className="text-xl font-semibold">
                         ₹{item.price}
                       </span>
                     </h1>
-                    <h3 className="text-[grey] font-medium text-md">
-                      You save {item.savePricePercent}
-                    </h3>
                   </div>
                 </div>
               ))}

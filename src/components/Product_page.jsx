@@ -32,12 +32,12 @@ const Product_page = () => {
   };
 
   return (
-    <div className="productdesc w-full pt-16 mt-10 md:mt-2">
+    <div className="productdesc w-full pt-16 mt-10 md:mt-2 bebas tracking-wider">
       <div className="product-nav flex items-center gap-4 sm:gap-6 md:gap-8 w-full pt-4 pb-3 px-4 sm:px-6 md:px-20">
-        <Link to="/home" className="flex items-center gap-2 sm:gap-4 font-semibold">
+        <Link to="/home" className="flex items-center gap-2 sm:gap-4 ">
           <span className="text-gray-600">HOME</span> <IoIosArrowForward />
         </Link>
-        <Link to="#" className="flex items-center gap-2 sm:gap-4 font-semibold">
+        <Link to="#" className="flex items-center gap-2 sm:gap-4 ">
           <span className="text-gray-600">SHOP</span> <IoIosArrowForward />
         </Link>
       </div>
@@ -53,11 +53,11 @@ const Product_page = () => {
         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto">
           <div className="relative">
             <button
-              className="flex items-center gap-2 sm:gap-4 font-semibold text-lg sm:text-xl border-2 border-gray-300 px-3 sm:px-4 py-1 sm:py-2"
+              className="flex items-center gap-2 sm:gap-4  text-lg sm:text-xl border-2 border-gray-300 px-3 sm:px-4 py-1 sm:py-2"
               onClick={toggleDropdown}
             >
               <RiEqualizerLine />
-              <span className="text-black font-black">CATEGORY</span>
+              <span className="text-black ">CATEGORY</span>
             </button>
             {isDropdownOpen && (
               <div className="absolute left-0 mt-2 w-full bg-white border rounded-lg shadow-lg z-50">
@@ -96,11 +96,11 @@ const Product_page = () => {
           </div>
           <div className="relative">
             <button
-              className="flex items-center gap-2 sm:gap-4 font-semibold text-lg sm:text-xl border-2 border-gray-300 px-3 sm:px-4 py-1 sm:py-2"
+              className="flex items-center gap-2 sm:gap-4  text-lg sm:text-xl border-2 border-gray-300 px-3 sm:px-4 py-1 sm:py-2"
               onClick={togglePriceDropdown}
             >
               <RiEqualizerLine />
-              <span className="text-black font-black">PRICE</span>
+              <span className="text-black ">PRICE</span>
             </button>
             {isPriceDropdownOpen && (
               <div className="absolute left-0 mt-2 w-[150px] bg-white border rounded-lg shadow-lg z-50">
@@ -134,14 +134,14 @@ const Product_page = () => {
         </div>
         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto">
           <Link className="flex items-center gap-2 sm:gap-5">
-            <span className="font-black">SHOW</span>
-            <span className="py-2 px-4 sm:py-3 sm:px-6 rounded-3xl border-2 border-gray-300 text-sm sm:text-lg font-black text-gray-600">
+            <span className="text-lg">SHOW</span>
+            <span className="py-2 px-4 sm:py-3 sm:px-6 rounded-3xl border-2 border-gray-300 text-sm sm:text-lg text-lg text-gray-600">
               8
             </span>
           </Link>
-          <Link className="flex items-center gap-2 sm:gap-5 font-black mt-4 md:mt-0">
-            <span className="font-black">SORT BY</span>
-            <span className="py-2 px-4 sm:py-3 sm:px-6 rounded-3xl border-2 border-gray-300 text-sm sm:text-lg font-black text-black tracking-tighter">
+          <Link className="flex items-center gap-2 sm:gap-5 text-lg mt-4 md:mt-0">
+            <span className="text-lg">SORT BY</span>
+            <span className="py-2 px-4 sm:py-3 sm:px-6 rounded-3xl border-2 border-gray-300 text-sm sm:text-lg text-lg text-black tracking-tighter">
               {selectedCategory} | {selectedPrice}
             </span>
           </Link>

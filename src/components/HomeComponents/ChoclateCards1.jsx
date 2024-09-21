@@ -47,11 +47,11 @@ const ChoclateCards1 = () => {
             </div>
             <h1
               onClick={() => handleClick('/shop/product')}
-              className="font-black text-lg cursor-pointer"
+              className="font-black text-lg cursor-pointer font-beach"
             >
               {item.name}
             </h1>
-            <p className="px-4 text-sm text-center text-[#ae5e5e] font-semibold">
+            <p className="px-4 text-sm text-center text-[#ae5e5e]  font-beach">
               {item.desc}
             </p>
             <button

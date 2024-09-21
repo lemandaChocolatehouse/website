@@ -6,12 +6,12 @@ import Shadow from "/assets/img/shadow.png";
 
 const Section3IN = () => {
   return (
-    <div className='section3In flex gap-3 w-full h-[90vh] bg-[#fff] p-8 px-20'>
+    <div className='section3In flex gap-3 w-full h-[90vh] bg-[#fff] p-8 px-20 font-beach'>
         <div className="section3In-left flex flex-col  py-5 w-3/5 h-full ">
         <h1 className='text-8xl font-bold relative leading-tight text-[#592D1E] '>Your Only <img className='scale-[0.6] absolute -top-16 right-40' src={Cake2} alt="" />  <img className='scale-[0.8] absolute -top-16 right-40' src={Shadow} alt="" /> <br /> Dose Of Delight</h1>
         <h2 className='text-[#592D1E] font-bold mt-7'>Featured Item-</h2>
         <div className='w-full flex items-center'>
-            <img className='free-cookie-img scale-[0.7] -ml-16' src={Cookie} alt="" />
+            <img className='free-cookie-img scale-[0.7] -ml-6 mr-4' src={Cookie} alt="" />
             <div className='-ml-5'>
                 <h1 className='font-black text-xl text-[#592D1E]'>CHOCO COOKIE</h1>
                 <h2 className='font-bold text-lg text-[#d18b73]'>Gluten Free</h2>

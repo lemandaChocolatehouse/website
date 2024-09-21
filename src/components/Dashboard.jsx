@@ -431,7 +431,7 @@ const Dashboard = () => {
       <div className="mt-20 w-full flex flex-col justify-center items-center">
       <button
         onClick={toggleGridVisibility}
-        className="w-[20%] flex justify-center mb-4 py-2 bg-[#592d1e] text-white rounded-md hover:bg-[#421d11]"
+        className="w-[40%] md:w-[20%] flex justify-center mb-4 py-2 bg-[#592d1e] text-white rounded-md hover:bg-[#421d11]"
       >
         {isGridVisible ? 'Hide Products' : 'Manage Products'}
       </button>

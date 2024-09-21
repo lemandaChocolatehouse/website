@@ -95,7 +95,7 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
 
         <Link
           to="/shop"
-          className="px-7 py-2 rounded-full bg-[#592D1E] text-white font-black shadow-md shadow-[#0000005a] hidden md:block"
+          className="px-7 py-2 rounded-full bg-[#592D1E] tracking-wider text-white bebas shadow-md shadow-[#0000005a] hidden md:block"
           onClick={() => handleLinkClick("Shop")}
         >
           SHOP
