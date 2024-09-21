@@ -94,7 +94,7 @@ const Landing = () => {
               <IoIosArrowForward />
             </button>
           </div>
-          <div className="shop-now w-full flex flex-col justify-center items-center mt-32">
+          <div className="shop-now w-full flex flex-col justify-center items-center mt-32 md:hidden">
             <div className="w-full flex justify-center relative ml-10">
               <div
                 className="circle w-[14vw] h-[14vw] rounded-full bg-[#833829] border border-black"
