@@ -95,7 +95,7 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
 
         <Link
           to="/shop"
-          className="px-7 py-2 rounded-full bg-[#592D1E] tracking-wider text-white bebas shadow-md shadow-[#0000005a] hidden md:block"
+          className="px-7 py-2 rounded-full bg-[#592D1E] text-xl tracking-wider text-white bebas shadow-md shadow-[#0000005a] hidden md:block"
           onClick={() => handleLinkClick("Shop")}
         >
           SHOP
@@ -128,7 +128,7 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
                 </a>
                 <Link
                   to="/login"
-                  className="flex justify-center px-4 py-2 text-gray-800 hover:bg-gray-200"
+                  className="flex justify-center px-4 py-2 text-xl text-gray-800 hover:bg-gray-200 bebas"
                   onClick={() => {
                     logout(); // Call logout function
                     handleLinkClick("Logout");
@@ -144,7 +144,7 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
         ) : (
           <Link
             to="/login"
-            className="px-7 py-2 rounded-full bg-[#592D1E] text-white font-black shadow-md shadow-[#0000005a]"
+            className="px-7 py-2 rounded-full bg-[#592D1E] text-xl text-white font-black shadow-md shadow-[#0000005a] bebas tracking-wider"
             onClick={() => handleLinkClick("Login")}
           >
             Login

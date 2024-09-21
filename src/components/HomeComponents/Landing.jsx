@@ -86,7 +86,7 @@ const Landing = () => {
           <div className="images buttons mt-12 flex gap-5">
             {/* Link to Product Page */}
             <Link to="/shop">
-              <button className="bg-[#833829] text-white font-semibold font-sans py-5 px-10 rounded-full text-lg">
+              <button className="bg-[#833829] text-white font-semibold font-sans py-5 px-10 rounded-full text-lg relative z-30">
                 Grab a Bite
               </button>
             </Link>
