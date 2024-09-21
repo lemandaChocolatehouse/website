@@ -11,11 +11,11 @@ const Footer = forwardRef((props, ref) => {
         className="footer w-70% ml-3 mr-3 px-7 py-8 bg-[#592D1E] text-white rounded-[30px] font-sans mb-[40px]"
       >
         <h1 className="text-7xl font-semibold">NEED HELP?</h1>
-        <div className="footer-child1 w-full flex items-center justify-between">
+        <div className="footer-child1 w-full flex flex-col md:flex-row items-center justify-between">
           <div className="footer-child1-part1">
             <div className="footer-links flex items-center gap-4 mt-4">
               <a
-                className="w-fit flex items-center gap-2 px-4 py-2 rounded-full border border-[grey]"
+                className="w-full md:w-fit flex items-center gap-2 px-4 py-2 rounded-full border border-[grey]"
                 href="https://www.facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -24,7 +24,7 @@ const Footer = forwardRef((props, ref) => {
                 <span className="text-xs">FACEBOOK</span>
               </a>
               <a
-                className="w-fit flex items-center gap-2 px-4 py-2 rounded-full border border-[grey]"
+                className="w-full md:w-fit flex items-center gap-2 px-4 py-2 rounded-full border border-[grey]"
                 href="https://www.twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -33,7 +33,7 @@ const Footer = forwardRef((props, ref) => {
                 <span className="text-xs">TWITTER</span>
               </a>
               <a
-                className="w-fit flex items-center gap-2 px-4 py-2 rounded-full border border-[grey]"
+                className="w-full md:w-fit flex items-center gap-2 px-4 py-2 rounded-full border border-[grey]"
                 href="https://www.instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -43,9 +43,9 @@ const Footer = forwardRef((props, ref) => {
               </a>
             </div>
           </div>
-          <div className="footer-child1-part2">
-            <p className="text-xl">Or send your email to</p>
-            <h1 className="text-right font-bold text-xl mt-5">
+          <div className="flex ">
+            {/* <p className="text-xl">Queries @</p> */}
+            <h1 className=" font-bold text-xl mt-5">
               SAMPLE@GMAIL.COM
             </h1>
           </div>
@@ -85,7 +85,7 @@ const Footer = forwardRef((props, ref) => {
         style={{ height: "25%" }}
       >
         <p className="text-center text-l">
-          Developed by CampaigningSource | All rights reserved!
+        02024 Lemanda.in, made with 💖 by Campaigning Source, all rights reserved
         </p>
       </div>
 

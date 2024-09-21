@@ -41,7 +41,7 @@ export const Product1 = () => {
   // };
 
   return (
-    <div className="productdesc w-full pt-16 pb-5">
+    <div className="productdesc w-full pt-16 pb-5 mt-8 md:mt-2">
       <div className="product-nav flex items-center gap-7 w-full pt-4 pb-3 px-20">
         <Link to="/home" className="flex items-center gap-4 font-semibold">
           <span className="text-[grey]">HOME</span> <IoIosArrowForward />
@@ -60,7 +60,7 @@ export const Product1 = () => {
         <div className="productdesc-left flex w-[50%] h-[82vh] justify-around p-5">
           <div className="hr-boxs w-[20%] h-full flex flex-col items-center justify-between mr-6">
             <div
-              className="hr-box w-40 h-40 rounded-3xl shadow-lg shadow-[#000000ab]"
+              className="hr-box  w-20 h-20 md:w-40 md:h-40 rounded-3xl shadow-lg shadow-[#000000ab]"
               style={{
                 backgroundImage: `url(${convertImageToBase64(
                   product?.Image1
@@ -69,7 +69,7 @@ export const Product1 = () => {
               }}
             />
             <div
-              className="hr-box w-40 h-40 rounded-3xl shadow-lg shadow-[#000000ab]"
+              className="hr-box  w-20 h-20 md:w-40 md:h-40 rounded-3xl shadow-lg shadow-[#000000ab]"
               style={{
                 backgroundImage: `url(${convertImageToBase64(
                   product?.Image2
@@ -78,7 +78,7 @@ export const Product1 = () => {
               }}
             />
             <div
-              className="hr-box w-40 h-40 rounded-3xl shadow-lg shadow-[#000000ab]"
+              className="hr-box w-20 h-20 md:w-40 md:h-40 rounded-3xl shadow-lg shadow-[#000000ab]"
               style={{
                 backgroundImage: `url(${convertImageToBase64(
                   product?.Image3

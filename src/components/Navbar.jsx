@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import Image from "/assets/img/logon.png";
+import Image from "/assets/img/lemanda-logo.jpg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { SiIfixit } from "react-icons/si";
 import { FaHeart } from "react-icons/fa";
@@ -53,8 +53,8 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
   return (
     <div className="Navbar fixed top-0 flex items-center justify-between w-full py-3 px-4 bg-[#f5f5f5] text-black z-50">
       {/* Logo */}
-      <Link to="/">
-        <img className="w-[10vw]" src={Image} alt="Logo" />
+      <Link to="/" className="w-[60px] h-[50px]">
+        <img className=" " src={Image} alt="Logo" />
       </Link>
 
       {/* Navigation Links */}
