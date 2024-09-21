@@ -70,7 +70,8 @@ const ChoclateCards = ({ selectedCategory, selectedPrice }) => {
     setCurrentPage(pageNumber);
   };
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="w-full flex justify-center text-2xl font-bold my-10 text-[#592d1e]">Crafting Delights.......
+</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (

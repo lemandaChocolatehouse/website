@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        beach: ['BeachSound', 'sans-serif'], // Register the custom font
+      },
+    },
   },
   plugins: [],
 }

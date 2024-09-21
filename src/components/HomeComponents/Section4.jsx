@@ -11,7 +11,7 @@ const Section4 = () => {
         </p>
         <h1 className="mt-4 font-black text-xl text-[#592D1E]">Pure. <br />Wholesome. <br />Reliable.</h1>
        </div>
-        <h1 className="section4-heading text-6xl font-black text-[#592D1E] text-right leading-tight">
+        <h1 className="section4-heading text-6xl font-black text-[#592D1E] text-right leading-tight " >
           WHOLESOME <br /> GOODNESS,
         HONEST <br /> TASTE
         </h1>

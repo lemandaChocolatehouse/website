@@ -1,10 +1,17 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'BeachSound2';
+  src: url('/fonts/BeachSound2.otf') ;
+  font-weight: normal;
+  font-style: normal;
+}
 
 .landing-image {
   background-image: url("../img/BG.png");
@@ -307,6 +314,7 @@ font-weight: 900;
     text-align: center;
     font-size: 3vw;
     font-size: 5vw;
+    font-family: "BeachSound2";
   }
   .section4-img {
     height: 14vh;

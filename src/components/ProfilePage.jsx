@@ -35,13 +35,13 @@ export const ProfilePage = () => {
   
 
   return (
-    <div className='flex flex-col w-full mt-10'>
+    <div className='flex flex-col w-full md:mt-10 mt-24'>
     <div className="flex flex-col justify-center items-center w-full h-[400px] bg-white p-8 rounded-lg shadow-xl">
       <div>
       <FaUserCircle size={200} />
       </div>
       <h2 className="text-2xl font-bold my-6">Profile</h2>
-      <div className="flex gap-10 mt-4 items-center">
+      <div className="flex flex-col md:flex-row md:gap-10 mt-4 items-center">
         <div className="mb-4">
           <span className="font-semibold">Name: </span>
           <span>{userData.name}</span>

@@ -32,7 +32,7 @@ const Product_page = () => {
   };
 
   return (
-    <div className="productdesc w-full pt-16">
+    <div className="productdesc w-full pt-16 mt-10 md:mt-2">
       <div className="product-nav flex items-center gap-4 sm:gap-6 md:gap-8 w-full pt-4 pb-3 px-4 sm:px-6 md:px-20">
         <Link to="/home" className="flex items-center gap-2 sm:gap-4 font-semibold">
           <span className="text-gray-600">HOME</span> <IoIosArrowForward />
