@@ -11,7 +11,7 @@ const AboutSection1 = () => {
   };
 
   return (
-    <div className="about-section1 w-full px-16 bg-[#F5F5F5] pb-10 mt-10">
+    <div className="about-section1 w-full px-16 bg-[#F5F5F5] pb-10 md:mt-10">
       <div className="about-section1-top w-full py-14 text-center">
         <h1 className="text-5xl mb-3">
           GOOD CHOCOLATE, GOOD MOOD
