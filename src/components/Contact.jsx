@@ -37,7 +37,7 @@ const Contact = () => {
             </a>
           </div>
         </div>
-      <div className="bg-white w-[95%] md:w-[45%] flex flex-col md:flex-row items-center shadow-2xl  relative min-h-[500px] md:min-h-[600px] -top-1 " style={{ boxShadow: '0 -4px 10px rgba(0, 0, 0, 0.2)' }}>
+      <div className="bg-white w-[95%] md:w-[45%] flex flex-col md:flex-row items-center  relative min-h-[500px] md:min-h-[600px] -top-1 " style={{ boxShadow: '0 -4px 10px rgba(0, 0, 0, 0.2)',boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)' }}>
         {/* Contact Information Section */}
         <div className="bg-[#592d1e] hidden md:flex shadow-2xl text-white flex-col gap-6 justify-center px-8 h-[500px] absolute left-[-120px]" >
           <h2 className="text-4xl font-semibold my-4">Contact Us</h2>
