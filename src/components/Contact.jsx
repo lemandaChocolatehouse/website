@@ -13,17 +13,17 @@ const Contact = () => {
     <div className="flex flex-col md:flex-row justify-center items-center min-h-screen bg-cover bg-center md:mt-6 "  >
       <div className="bg-[#592d1e] w-[90%] mt-20 rounded-xl flex md:hidden shadow-2xl text-white flex-col gap-4 justify-center px-8 h-[250px] relative z-20" >
           <h2 className="text-2xl font-semibold">Contact Us</h2>
-          <p className="flex items-center">
-            <span className="mr-2"><MdLocationOn size={16} /></span> 23, Avenue de Paris
+          <p className="flex items-center text-sm">
+            <span className="mr-2"><MdLocationOn size={16} /></span> K-8 Niti Nagar, Sanjay Nagar <br /> Ghaziabad, Uttar Pradesh, India
           </p>
-          <p className="flex items-center">
-            <span className="mr-2"><IoMdMail size={16} /></span> hello@mikechemardin.com
+          <p className="flex items-center text-sm">
+            <span className="mr-2"><IoMdMail size={16} /></span> lemanda1978@gmail.com
           </p>
-          <p className="flex items-center">
-            <span className="mr-2"><FaWebAwesome size={16} /></span> mike.chemardin
+          <p className="flex items-center text-sm">
+            <span className="mr-2"><FaWebAwesome size={16} /></span> lemanda.in
           </p>
-          <p className="flex items-center">
-            <span className="mr-2"><FaPhone size={16} /></span> +33619530144
+          <p className="flex items-center text-sm">
+            <span className="mr-2"><FaPhone size={16} /></span> +91 {" "} 8920309557
           </p>
           <div className="flex gap-4">
             <a href="#" className="text-white hover:text-gray-300">
@@ -37,21 +37,21 @@ const Contact = () => {
             </a>
           </div>
         </div>
-      <div className="bg-white w-[95%] md:w-[45%] flex flex-col md:flex-row items-center  relative min-h-[500px] md:min-h-[600px] -top-1 " style={{ boxShadow: '0 -4px 10px rgba(0, 0, 0, 0.2)',boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)' }}>
+      <div className="bg-white w-[95%] md:w-[45%] flex flex-col md:flex-row items-center shadow-2xl  relative min-h-[500px] md:min-h-[600px] -top-1 " style={{ boxShadow: '0 -4px 10px rgba(0, 0, 0, 0.2)' }}>
         {/* Contact Information Section */}
         <div className="bg-[#592d1e] hidden md:flex shadow-2xl text-white flex-col gap-6 justify-center px-8 h-[500px] absolute left-[-120px]" >
           <h2 className="text-4xl font-semibold my-4">Contact Us</h2>
           <p className="flex items-center">
-            <span className="mr-2"><MdLocationOn size={20} /></span> 23, Avenue de Paris
+            <span className="mr-2"><MdLocationOn size={20} /></span> K-8 Niti Nagar, Sanjay Nagar <br /> Ghaziabad, Uttar Pradesh, India
           </p>
           <p className="flex items-center">
-            <span className="mr-2"><IoMdMail size={20} /></span> hello@mikechemardin.com
+            <span className="mr-2"><IoMdMail size={20} /></span> lemanda1978@gmail.com
           </p>
           <p className="flex items-center">
-            <span className="mr-2"><FaWebAwesome size={20} /></span> mike.chemardin
+            <span className="mr-2"><FaWebAwesome size={20} /></span> lemanda.in
           </p>
           <p className="flex items-center">
-            <span className="mr-2"><FaPhone size={20} /></span> +33619530144
+            <span className="mr-2"><FaPhone size={20} /></span> +91 {" "} 8920309557
           </p>
           <div className="flex gap-10 my-10">
             <a href="#" className="text-white hover:text-gray-300">
