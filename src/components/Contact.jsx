@@ -1,77 +1,101 @@
+// Contact.js
 import React from 'react';
+import { MdLocationOn  } from 'react-icons/md';
+import { IoMdMail  } from 'react-icons/io';
+import { FaWebAwesome } from 'react-icons/fa6';
+import { FaPhone } from 'react-icons/fa6';
+import { AiFillInstagram } from 'react-icons/ai';
+import { FaTwitter } from 'react-icons/fa';
+import {SiLinkedin } from 'react-icons/si';
 
 const Contact = () => {
   return (
-    <div
-      className="min-h-screen bg-cover bg-center flex items-center justify-center bebas tracking-wider"
-      style={{
-        backgroundImage: 'url(/assets/img/s.jpg)', // Full page background image
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      <div
-        className="relative p-8 rounded-lg shadow-lg"
-        style={{
-          backgroundColor: 'beige', // Brown background color
-         opacity:'95%',
-          width: '100%',
-          maxWidth: '600px',
-          marginTop:'80px',
-        }}
-      >
-        <h2 className="text-3xl  mb-6 text-center text-black relative">
-          <span className="absolute inset-0  opacity-50 -z-10"></span>
-          Contact Us
-        </h2>
+    <div className="flex flex-col md:flex-row justify-center items-center min-h-screen bg-cover bg-center md:mt-6 "  >
+      <div className="bg-[#592d1e] w-[90%] mt-20 rounded-xl flex md:hidden shadow-2xl text-white flex-col gap-4 justify-center px-8 h-[250px] relative z-20" >
+          <h2 className="text-2xl font-semibold">Contact Us</h2>
+          <p className="flex items-center">
+            <span className="mr-2"><MdLocationOn size={16} /></span> 23, Avenue de Paris
+          </p>
+          <p className="flex items-center">
+            <span className="mr-2"><IoMdMail size={16} /></span> hello@mikechemardin.com
+          </p>
+          <p className="flex items-center">
+            <span className="mr-2"><FaWebAwesome size={16} /></span> mike.chemardin
+          </p>
+          <p className="flex items-center">
+            <span className="mr-2"><FaPhone size={16} /></span> +33619530144
+          </p>
+          <div className="flex gap-4">
+            <a href="#" className="text-white hover:text-gray-300">
+              <i className="fab fa-instagram"><AiFillInstagram size={24} /></i>
+            </a>
+            <a href="#" className="text-white hover:text-gray-300">
+              <i className="fab fa-twitter"><FaTwitter size={22} /></i>
+            </a>
+            <a href="#" className="text-white hover:text-gray-300">
+              <i className="fab fa-linkedin"><SiLinkedin size={20} /></i>
+            </a>
+          </div>
+        </div>
+      <div className="bg-white w-[95%] md:w-[45%] flex flex-col md:flex-row items-center  relative min-h-[500px] md:min-h-[600px] -top-1 " style={{ boxShadow: '0 -4px 10px rgba(0, 0, 0, 0.2)',boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)' }}>
+        {/* Contact Information Section */}
+        <div className="bg-[#592d1e] hidden md:flex shadow-2xl text-white flex-col gap-6 justify-center px-8 h-[500px] absolute left-[-120px]" >
+          <h2 className="text-4xl font-semibold my-4">Contact Us</h2>
+          <p className="flex items-center">
+            <span className="mr-2"><MdLocationOn size={20} /></span> 23, Avenue de Paris
+          </p>
+          <p className="flex items-center">
+            <span className="mr-2"><IoMdMail size={20} /></span> hello@mikechemardin.com
+          </p>
+          <p className="flex items-center">
+            <span className="mr-2"><FaWebAwesome size={20} /></span> mike.chemardin
+          </p>
+          <p className="flex items-center">
+            <span className="mr-2"><FaPhone size={20} /></span> +33619530144
+          </p>
+          <div className="flex gap-10 my-10">
+            <a href="#" className="text-white hover:text-gray-300">
+              <i className="fab fa-instagram"><AiFillInstagram size={34} /></i>
+            </a>
+            <a href="#" className="text-white hover:text-gray-300">
+              <i className="fab fa-twitter"><FaTwitter size={34} /></i>
+            </a>
+            <a href="#" className="text-white hover:text-gray-300">
+              <i className="fab fa-linkedin"><SiLinkedin size={30} /></i>
+            </a>
+          </div>
+        </div>
 
-        {/* Contact Form */}
-        <form className="space-y-4">
-          <div>
-            <label className="block  text-gray-100">Name</label>
+        {/* Form Section */}
+        <div className='w-1/3 hidden md:block'></div>
+        <div className='w-[90%] md:w-2/3'>
+        <div className="bg-white md:pr-10">
+          <h2 className="text-2xl md:text-4xl text-center md:text-start font-bold text-gray-800 my-2 md:my-6">Get in Touch</h2>
+          <p className="text-[#592d1e] text-center md:text-start text-base md:text-xl mb-4">Feel free to drop us a line below!</p>
+          <form className="space-y-4">
             <input
               type="text"
-              className="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#833829]"
-              placeholder="Enter your name"
+              placeholder="Your name"
+              className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#592d1e]"
             />
-          </div>
-
-          <div>
-            <label className="block  text-gray-100">Email</label>
             <input
               type="email"
-              className="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#833829]"
-              placeholder="Enter your email"
+              placeholder="Your email"
+              className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#592d1e]"
             />
-          </div>
-
-          <div>
-            <label className="block  text-gray-100">Phone</label>
-            <input
-              type="tel"
-              className="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#833829]"
-              placeholder="Enter your phone number"
-            />
-          </div>
-
-          <div>
-            <label className="block  text-gray-100">Message</label>
             <textarea
-              className="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#833829]"
-              placeholder="Enter your message"
-              rows="5"
+              placeholder="Type your message here..."
+              className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#592d1e] h-32"
             ></textarea>
-          </div>
-
-          <div className="flex justify-center">
             <button
               type="submit"
-              className="bg-[#833829] text-white tracking-wider py-3 px-6 rounded-full text-lg hover:bg-[#A84C3F] transition duration-300"
+              className="px-4 py-3 bg-[#592d1e] text-white rounded-full hover:bg-[#492417] transition duration-300 shadow-lg w-full"
             >
-              Submit
+              SEND
             </button>
-          </div>
-        </form>
+          </form>
+        </div>
+        </div>
       </div>
     </div>
   );
