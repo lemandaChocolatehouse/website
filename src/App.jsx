@@ -20,6 +20,7 @@ import Login from "./components/Login";
 import { ProfilePage } from "./components/ProfilePage";
 import Payment from "./components/Payment";
 import Dashboard from "./components/Dashboard";
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   const [isActive, setisActive] = useState(false);
@@ -69,7 +70,7 @@ const App = () => {
               )
             )}
           </div>
-
+          <ScrollToTop />
           <Routes>
             <Route path="/signup-page" element={<Signup />} />
             <Route path="/login" element={<Login />} />
@@ -86,6 +87,7 @@ const App = () => {
             {/* Add Wishlist route */}
             <Route path="*" element={<Home />} />
           </Routes>
+         
         </div>
       </ModalProvider>
     </AuthProvider>

@@ -71,8 +71,8 @@ const Footer = forwardRef((props, ref) => {
             <div className="footer-child2-part3">
               <h1 className="text-2xl ">SERVICE</h1>
               <div className="flex items-start gap-5 text-[grey] mt-2  text-lg">
-                <a href="">TERMS OF USE</a>
-                <a href="">PRIVACY POLICY</a>
+                <a href="/about#terms">TERMS OF USE</a>
+                <a href="/about#terms">PRIVACY POLICY</a>
               </div>
             </div>
           </div>
