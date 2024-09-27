@@ -137,14 +137,14 @@ const Section3 = () => {
         </div>
 
         {loading ? (
-          <p className="w-full flex justify-center">Crafting delights...</p>
+          <p className="w-full flex justify-center text-2xl font-bold my-10 text-[#592d1e]">Crafting delights...</p>
         ) : error ? (
           <p className="w-full flex justify-center">
             Error loading products: {error}
           </p>
         ) : (
           <div className="choclate-cards-container">
-            <div className="choclate-cards-wrapper">
+            <div className="choclate-cards-wrapper w-full">
               {filteredProducts.length > 0 ? (
                 filteredProducts.map((item) => (
                   <div
@@ -193,7 +193,7 @@ const Section3 = () => {
                   </div>
                 ))
               ) : (
-                <p>No products found</p>
+                <p className="w-full flex justify-center text-2xl font-bold my-10 text-[#592d1e]">No products found</p>
               )}
             </div>
           </div>
