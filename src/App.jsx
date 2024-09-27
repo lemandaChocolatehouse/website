@@ -20,7 +20,11 @@ import Login from "./components/Login";
 import { ProfilePage } from "./components/ProfilePage";
 import Payment from "./components/Payment";
 import Dashboard from "./components/Dashboard";
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from "./components/ScrollToTop";
+import Terms from "./components/Terms";
+import Cancel from "./components/Cancel";
+import Shipping from "./components/Shipping";
+import Privacy from "./components/Privacy";
 
 const App = () => {
   const [isActive, setisActive] = useState(false);
@@ -84,10 +88,13 @@ const App = () => {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/admin/dashboard" element={<Dashboard />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/cancel" element={<Cancel />} />
+            <Route path="/shipping" element={<Shipping />} />
+            <Route path="/privacy" element={<Privacy />} />
             {/* Add Wishlist route */}
             <Route path="*" element={<Home />} />
           </Routes>
-         
         </div>
       </ModalProvider>
     </AuthProvider>

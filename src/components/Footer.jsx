@@ -51,29 +51,36 @@ const Footer = forwardRef((props, ref) => {
             </h1>
           </div>
         </div>
-        <div className="footer-child2 w-full flex items-center justify-between mt-11">
-          <div className="footer-child2-part1">
+        <div className="footer-child2 w-full flex flex-col md:flex-row items-center justify-between mt-11">
+          <div className="flex flex-col">
             <h1 className="text-2xl ">FEATURE</h1>
-            <div className="footer-child1-part1-links flex items-start gap-5 text-[grey] mt-2  text-lg">
+            <div className=" flex  items-start gap-5 text-[grey] mt-2  text-lg">
               <a href="">TRANSACTION</a>
               <a href="">TRACKING</a>
               <a href="">FEED</a>
               <a href="">PAYMENT</a>
             </div>
           </div>
-          <div className="foot flex gap-32">
+          <div className="flex flex-col md:flex-row mt-10 md:mt-0 gap-8 md:gap-32">
             <div className="footer-child2-part2">
               <h1 className="text-2xl ">ABOUT US</h1>
-              <div className="flex items-start gap-5 text-[grey] mt-2  text-lg">
+              <div className="flex items-start gap-5 text-[grey] mt-2  text-base md:text-xl">
                 <a href="">PROFILE</a>
                 <a href="">ADDRESS</a>
               </div>
             </div>
             <div className="footer-child2-part3">
               <h1 className="text-2xl ">SERVICE</h1>
-              <div className="flex items-start gap-5 text-[grey] mt-2  text-lg">
-                <a href="/about#terms">TERMS OF USE</a>
-                <a href="/about#terms">PRIVACY POLICY</a>
+              <div className="flex flex-col items-start gap-5 text-[grey] mt-2  text-lg">
+                <div  className="flex gap-10 text-base md:text-xl">
+                <a href="/terms">TERMS & CONDITIONS</a>
+                <a href="/shipping">SHIPPING AND DELIVERY POLICY</a>
+                </div>
+                <div className="flex gap-10 text-base md:text-xl">
+                <a href="/cancel">CANCELLATION AND REFUND POLICY</a>
+                <a href="/privacy">PRIVACY POLICY</a>
+                </div>
+                
               </div>
             </div>
           </div>
