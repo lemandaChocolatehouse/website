@@ -43,10 +43,11 @@ const Footer = forwardRef((props, ref) => {
               </a>
             </div>
           </div>
-          <div className="flex ">
+          <div className="flex  ">
             {/* <p className="text-xl">Queries @</p> */}
-            <h1 className="text-xl mt-5">
-              SAMPLE@GMAIL.COM
+            <h1 className="text-3xl mt-5">
+            lemanda1978@gmail.com
+
             </h1>
           </div>
         </div>
@@ -85,7 +86,7 @@ const Footer = forwardRef((props, ref) => {
         style={{ height: "25%" }}
       >
         <p className="text-center md:text-xl">
-        ©️2024 Lemanda Chocolate House, made with 💖 by Campaigning Source, all rights reserved
+        ©️2024 Le manda Chocolate House, made with 💖 by Campaigning Source, all rights reserved
         </p>
       </div>
 

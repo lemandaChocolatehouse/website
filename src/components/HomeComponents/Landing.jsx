@@ -18,11 +18,20 @@ const Landing = () => {
     <div className="landing w-full h-fit bg-white px-4 py-3 mt-14">
       <div className="landing-image overflow-hidden w-full h-screen bg-[#592D1E] rounded-2xl px-8 py-6 flex justify-between relative">
         <div className="landing-text relative">
-          <img
+          {/* <img
             className="text-content w-[42vw] relative z-20"
             src={Text}
             alt=""
-          />
+          /> */}
+          <div className="w-[42vw] flex flex-col justify-center  relative z-20">
+            <div className="text-white font-beach text-[55px] md:text-[110px] md:leading-[180px]">CHOCOLATE</div>
+            <div className="flex items-center gap-4 w-full">
+              <div className="text-white text-[6px] md:text-[12.5px] roboto-r  md:w-[40%] ">Crafted with love, passion, and the finest ingredients, our chocolates and baked treats offer an irresistible taste of sweetness and elegance. Each bite tells the story of dedication and artistry.
+              </div>
+              <div className="w-[30%] md:w-[50%] text-white font-beach text-[60px] md:text-[110px] md:leading-[100px]">HOUSE</div>
+            </div>
+            <div className="text-white font-jagret text-[64px] md:text-[130px] md:leading-[180px]">DELICACY</div>
+          </div>
           <img
             className="images absolute top-12 -right-12 scale-[0.6]"
             src={Choclate1}
@@ -73,17 +82,17 @@ const Landing = () => {
 
             <div className="flex gap-16 items-center">
               <div className="text-white">
-                <h1 className="text-5xl font-bold">520 +</h1>
+                <h1 className="text-5xl font-bold">780 +</h1>
                 <p className="text-[grey] font-sans">Happy Customers</p>
               </div>
               <div className="hrline w-[1px] h-16 bg-white"></div>
               <div className="text-white">
-                <h1 className="text-5xl font-bold">780 +</h1>
+                <h1 className="text-5xl font-bold">40 +</h1>
                 <p className="text-[grey] font-sans">Recipes</p>
               </div>
             </div>
           </div>
-          <div className="images buttons mt-12 flex gap-5">
+          <div className="images buttons mt-8 flex gap-5">
             {/* Link to Product Page */}
             <Link to="/shop">
               <button className="bg-[#833829] text-white font-semibold font-sans py-5 px-10 rounded-full text-lg relative z-30">
@@ -105,7 +114,7 @@ const Landing = () => {
                 }}
               ></div>
               <div
-                className="circle w-[14vw] h-[14vw] rounded-full bg-[#833829] relative -right-[36px]  border border-black"
+                className="circle w-[14vw] h-[14vw] rounded-full bg-[#833829] relative -right-[20px]  border border-black"
                 style={{
                   backgroundImage: `url('/assets/img/c2.jpg')`,
                   backgroundSize: "cover",
@@ -113,7 +122,7 @@ const Landing = () => {
                 }}
               ></div>
               <div
-                className="circle w-[14vw] h-[14vw] rounded-full bg-[#833829] relative -left-[69px] border border-black"
+                className="circle w-[14vw] h-[14vw] rounded-full bg-[#833829] relative -left-[74px] border border-black"
                 style={{
                   backgroundImage: `url('/assets/img/c1.jpg')`,
                   backgroundSize: "cover",
@@ -124,12 +133,12 @@ const Landing = () => {
 
             <div className="flex gap-10 items-center my-2">
               <div className="text-white flex flex-col items-center">
-                <h1 className="text-xl font-bold">520 +</h1>
+                <h1 className="text-xl font-bold">780 +</h1>
                 <p className="text-[grey] font-sans">Happy Customers</p>
               </div>
               <div className="hrline w-[1px] h-16 bg-white"></div>
               <div className="text-white flex flex-col items-center">
-                <h1 className="text-xl font-bold">780 +</h1>
+                <h1 className="text-xl font-bold">40 +</h1>
                 <p className="text-[grey] font-sans">Recipes</p>
               </div>
             </div>

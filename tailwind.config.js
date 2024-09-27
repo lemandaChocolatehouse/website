@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        beach: ['BeachSound2', 'sans-serif'], // Register the custom font
+        beach: ['BeachSound2', 'sans-serif'], 
+        jagret :['Jagret','sans-serif']// Register the custom font
       },
     },
   },

@@ -11,6 +11,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "Jagret";
+  src: url("/assets/fonts/jagret.otf");
+  font-weight: normal;
+  font-style: normal;
+}
 
 .roboto-t {
   font-family: "Roboto", sans-serif;
