@@ -112,8 +112,8 @@ const ChoclateCards = ({ selectedCategory, selectedPrice }) => {
             </div>
           ))
         ) : (
-          <p className="col-span-full text-center font-bold my-10 text-[#592d1e]">
-            Choose another Delight!!!
+          <p className="col-span-full text-center text-2xl font-bold my-10 text-[#592d1e]">
+            No products found !!!
           </p>
         )}
       </div>
