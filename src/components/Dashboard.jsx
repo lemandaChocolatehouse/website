@@ -437,7 +437,7 @@ const Dashboard = () => {
       </button>
 
       {isGridVisible && (
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-6 lg:gap-8 mx-4 mt-20">
+      <div className="w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-6 lg:gap-8 mx-4 mt-20">
         {products.length > 0 ? (
           products.map((item) => {
             return (
@@ -486,7 +486,7 @@ const Dashboard = () => {
             );
           })
         ) : (
-          <p>You have not added any products yet.</p>
+          <p className="col-span-6 text-2xl text-center font-bold my-10 text-[#592d1e]">You have not added any products yet.</p>
         )}
       </div>
        )}
@@ -541,7 +541,7 @@ const Dashboard = () => {
                     </tbody>
                 </table>
             ) : (
-                <p>No orders found for this user.</p>
+                <p className="w-full flex justify-center text-2xl font-bold my-10 text-[#592d1e]" >No orders found for this user.</p>
             )}
         </div>
     </div>
