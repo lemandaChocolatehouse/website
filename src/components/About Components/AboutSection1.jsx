@@ -19,7 +19,7 @@ const AboutSection1 = () => {
           over time to develop and improve
         </p>
       </div>
-      <div className="about-section1-btm w-full h-[60vh] flex pt-6">
+      <div className="about-section1-btm w-full  flex pt-6">
         <div className="about-section1-btm-left w-1/2 rounded-lg overflow-hidden shadow-lg shadow-[#9c9c9c]">
           <img
             src={AboutImage}
@@ -50,6 +50,7 @@ const AboutSection1 = () => {
            <h2 className="text-2xl md:text-3xl mt-6  text-[#592D1E] ">OUR MISSION</h2>
             <p className="text-[#79869F] md:leading-8 roboto-r md:pr-10 text-justify">
             To bring joy and indulgence through handcrafted chocolates, cookies, and baked goods, made with passion, love, and the finest ingredients. We aim to create moments of bliss and foster a sense of togetherness through our delightful treats.
+            
 
           </p>
         </div>
