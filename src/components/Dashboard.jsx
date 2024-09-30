@@ -428,7 +428,7 @@ const Dashboard = () => {
           </div>
         )}
       </div>
-      <div className="mt-20 w-full flex flex-col justify-center items-center">
+      <div className="mt-20 w-full flex flex-col justify-center mx-10 items-center">
       <button
         onClick={toggleGridVisibility}
         className="w-[40%] md:w-[20%] flex justify-center mb-4 py-2 bg-[#592d1e] text-white rounded-md hover:bg-[#421d11]"
@@ -437,7 +437,7 @@ const Dashboard = () => {
       </button>
 
       {isGridVisible && (
-      <div className="w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-6 lg:gap-8 mx-4 mt-20">
+      <div className="w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-6 lg:gap-8  mt-20">
         {products.length > 0 ? (
           products.map((item) => {
             return (
