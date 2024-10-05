@@ -8,7 +8,8 @@ import Cart from "../Cart";
 import { convertImageToBase64 } from "../../utils";
 
 const Section3 = () => {
-  const backend = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
+  const backend = import.meta.env.VITE_BACKEND_URL ;
+  
   const navigate = useNavigate();
   const [category, setCategory] = useState("ALL");
   const [products, setProducts] = useState([]); // Initialize as an empty array
