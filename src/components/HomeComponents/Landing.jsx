@@ -15,8 +15,8 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const Landing = () => {
   return (
-    <div className="landing w-full h-fit bg-white px-4 py-3 mt-14">
-      <div className="landing-image overflow-hidden w-full h-screen bg-[#592D1E] rounded-2xl px-8 py-6 flex justify-between relative">
+    <div className="landing w-full h-fit bg-white px-4 py-3 mt-20">
+      <div className="landing-image overflow-hidden w-full h-screen bg-[#592D1E] rounded-[36px] px-8 py-6 flex justify-between relative">
         <div className="landing-text relative">
           {/* <img
             className="text-content w-[42vw] relative z-20"

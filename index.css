@@ -97,7 +97,7 @@
 }
 
 .landing-image {
-  background-image: url("../img/BG.png");
+  background-image: url("./public/assets/img/bigbg.png");
   background-position: center;
   background-size: cover;
 }
