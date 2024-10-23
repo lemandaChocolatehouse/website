@@ -8,7 +8,8 @@ import { jwtDecode } from "jwt-decode";
 
 const Checkout = () => {
   const [userData, setUserData] = useState(null);
-  const backend = import.meta.env.VITE_BACKEND_URL;
+
+  // const backend = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
     // Get JWT token from local storage
