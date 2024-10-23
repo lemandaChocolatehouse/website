@@ -5,6 +5,13 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    host : '0.0.0.0'
-  }
+    proxy: {
+      '/api': {
+        target: 'https://chocolate-house-backend-main.vercel.app',
+        changeOrigin: true,
+        secure: false, // if needed to avoid SSL issues
+        rewrite: (path) => path.replace(/^\/api/, ''), // Adjust this based on your API routes
+      },
+    },
+  },
 })

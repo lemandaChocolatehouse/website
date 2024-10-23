@@ -25,6 +25,8 @@ import Terms from "./components/Terms";
 import Cancel from "./components/Cancel";
 import Shipping from "./components/Shipping";
 import Privacy from "./components/Privacy";
+import Status from "./components/status";
+
 
 const App = () => {
   const [isActive, setisActive] = useState(false);
@@ -86,7 +88,9 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/wishlist" element={<Wishlist />} />{" "}
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="/payment" element={<Payment />} />
+            <Route path="/payment/:totalAmount" element={<Payment />} />
+            <Route path="/status/:transactionId" element={<Status/>} />
+
             <Route path="/admin/dashboard" element={<Dashboard />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/cancel" element={<Cancel />} />
