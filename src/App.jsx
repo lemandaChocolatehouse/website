@@ -25,7 +25,7 @@ import Terms from "./components/Terms";
 import Cancel from "./components/Cancel";
 import Shipping from "./components/Shipping";
 import Privacy from "./components/Privacy";
-import Status from "./components/status";
+import Status from "./components/Status";
 
 
 const App = () => {
