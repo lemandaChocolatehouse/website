@@ -44,6 +44,11 @@ const PaymentStatusPage = () => {
     fetchPaymentStatus();
   }, []);
 
+  const handleClick = () => {
+    localStorage.removeItem("cartItems");
+    window.location.href = "/";
+  };
+
   return loading ? (
     <div className="mt-40 flex justify-center items-center">
       Loading payment and order details...
@@ -83,6 +88,11 @@ const PaymentStatusPage = () => {
               </p>
             </div>
           )}
+          
+          <button className="w-[180px] rounded-3xl py-2 text-white bg-green-500 flex justify-center items-center my-4" onClick={handleClick}>
+            Go to HomePage
+          </button>
+       
         </div>
       ) : (
         <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4">
