@@ -25,7 +25,7 @@ import Terms from "./components/Terms";
 import Cancel from "./components/Cancel";
 import Shipping from "./components/Shipping";
 import Privacy from "./components/Privacy";
-import Status from "./components/Status";
+import PaymentStatusPage from "./components/Status";
 
 
 const App = () => {
@@ -89,7 +89,7 @@ const App = () => {
             <Route path="/wishlist" element={<Wishlist />} />{" "}
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/payment/:totalAmount" element={<Payment />} />
-            <Route path="/status/:transactionId" element={<Status/>} />
+            <Route path="/status/:transactionId" element={<PaymentStatusPage />} />
 
             <Route path="/admin/dashboard" element={<Dashboard />} />
             <Route path="/terms" element={<Terms />} />

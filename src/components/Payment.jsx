@@ -28,6 +28,9 @@ const Payment = () => {
     }
   }, []);
 
+  // console.log(userDetails);
+
+
   const handleConfirmPayment = async () => {
     setLoading(true);
     setError(""); // Reset error state
@@ -49,8 +52,9 @@ const Payment = () => {
       totalPrice: totalAmount, // The total amount from your payment route
       MUID: "M" + Date.now(),
       transactionId: "T" + Date.now(),
-      status: 'paid', // Set status to paid initially
+      status: '', // Set status to paid initially
     };
+    // console.log(orderDetails);
   
     try {
       // Make a POST request to create the order
@@ -58,10 +62,7 @@ const Payment = () => {
       if (response.data && response.data.data.instrumentResponse.redirectInfo.url){
             window.location.href = response.data.data.instrumentResponse.redirectInfo.url;
       }
-      console.log(response.data);
-  
-      // Redirect to success page after successful order creation
-      navigate("/status/:transactionId");
+      // console.log(response.data);
     } catch (error) {
       console.error("Payment failed:", error);
       setError("Payment failed. Please try again later.");
