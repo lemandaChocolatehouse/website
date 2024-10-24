@@ -531,7 +531,7 @@ const Dashboard = () => {
                                         </div>
                                     ))}
                                 </td>
-                                <td className="border px-4 py-2">₹{order.totalPrice}</td>
+                                <td className="border px-4 py-2">₹{(order.amount)/100}</td>
                                 <td className="border px-4 py-2">{order.status}</td>
                                 <td className="border px-4 py-2">
                                     {new Date(order.createdAt).toLocaleString()}

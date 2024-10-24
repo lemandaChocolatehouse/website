@@ -40,6 +40,7 @@ const PaymentStatusPage = () => {
 
   useEffect(() => {
     fetchPaymentStatus();
+    localStorage.removeItem("cartItems");
   }, [location]);
 
   return loading ? (
