@@ -21,7 +21,9 @@ const PaymentStatusPage = () => {
         });
         const data2 = transactionresponse.data;
         setPaymentStatus(data2);
-
+        if (data2.success) {
+          localStorage.removeItem("cartItems");
+        }
         // Fetch the order details using the transaction ID
         const response = await axios.get(
           `${backend}/neworder/${transactionId}`
@@ -40,8 +42,7 @@ const PaymentStatusPage = () => {
 
   useEffect(() => {
     fetchPaymentStatus();
-    localStorage.removeItem("cartItems");
-  }, [location]);
+  }, []);
 
   return loading ? (
     <div className="mt-40 flex justify-center items-center">
