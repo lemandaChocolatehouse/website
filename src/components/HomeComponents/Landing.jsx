@@ -34,7 +34,7 @@ const RollingNumber = ({ targetNumber, duration, stepTime }) => {
     return () => clearInterval(interval);
   }, [targetNumber, duration, stepTime]);
 
-  return <h1 className="text-5xl font-bold">{Math.floor(currentNumber)} +</h1>
+  return <h1 className="text-5xl font-bold font-montserrat">{Math.floor(currentNumber)} +</h1>
 };
 
 const Landing = () => {
@@ -57,22 +57,22 @@ const Landing = () => {
             <div className="text-white font-jagret text-[64px] md:text-[130px] md:leading-[180px]">DELICACY</div>
           </div>
           <img
-            className="images absolute top-12 -right-12 scale-[0.6]"
+            className="images absolute top-3 -right-48 scale-[0.8]"
             src={Choclate1}
             alt=""
           />
           <img
-            className="images absolute -top-4 -left-8 scale-[0.6]"
+            className="images absolute -top-4 -left-0 scale-[0.8]"
             src={Choclate2}
             alt=""
           />
           <img
-            className="images absolute -bottom-10 -right-28 scale-[0.5]"
+            className="images absolute -bottom-0 -right-28 scale-[0.9]"
             src={Choclate3}
             alt=""
           />
           <img
-            className="images absolute bottom-24 -left-14 scale-[0.4] z-10"
+            className="images absolute bottom-14 -left-14 scale-[0.7] z-10"
             src={Choclate4}
             alt=""
           />
@@ -104,7 +104,7 @@ const Landing = () => {
               ></div>
             </div>
 
-            <div className="flex gap-16 items-center">
+            <div className="relative flex gap-16 items-center z-40">
               <div className="text-white">
                 <RollingNumber targetNumber={720} duration={1000} stepTime={10} />
                 <p className="text-[grey] font-sans">Happy Customers</p>
@@ -112,14 +112,14 @@ const Landing = () => {
               <div className="hrline w-[1px] h-16 bg-white"></div>
               <div className="text-white">
                 <RollingNumber targetNumber={20} duration={1000} stepTime={50} />
-                <p className="text-[grey] font-sans">Recipes</p>
+                <p className="text-[grey] font-sans">Recipies</p>
               </div>
             </div>
           </div>
           <div className="images buttons mt-8 flex gap-5">
             {/* Link to Product Page */}
             <Link to="/shop">
-              <button className="bg-[#833829] text-white font-semibold font-sans py-5 px-10 rounded-full text-lg relative z-30">
+              <button className="bg-[#833829] text-white font-semibold font-[inter] py-5 px-10 rounded-full text-lg relative z-30">
                 Grab a Bite
               </button>
             </Link>
@@ -155,14 +155,14 @@ const Landing = () => {
               ></div>
             </div>
 
-            <div className="flex gap-10 items-center my-2">
+            <div className="relative flex gap-10 items-center my-2 z-40">
               <div className="text-white flex flex-col items-center">
-                <h1 className="text-xl font-bold">780 +</h1>
+                <RollingNumber targetNumber={720} duration={1000} stepTime={10} />
                 <p className="text-[grey] font-sans">Happy Customers</p>
               </div>
               <div className="hrline w-[1px] h-16 bg-white"></div>
               <div className="text-white flex flex-col items-center">
-                <h1 className="text-xl font-bold">40 +</h1>
+                <RollingNumber targetNumber={20} duration={1000} stepTime={50} />
                 <p className="text-[grey] font-sans">Recipes</p>
               </div>
             </div>
@@ -174,18 +174,18 @@ const Landing = () => {
           alt=""
         />
         <img
-          className="absolute top-[380px] left-40 md:top-0 md:right-0 scale-[0.8] z-10"
+          className="absolute top-[380px] scale-[0.2] left-80 md:top-0 md:left-[90%] md:scale-[0.8] z-10"
           src={Choclate5}
           alt=""
         />
         <img
-          className="absolute -top-64 -right-28 scale-[0.6] z-10 animate-rotate"
+          className="absolute -top-32 -right-28 scale-[0.7] z-10 animate-rotate"
           src={groupLine}
           alt=""
         />
 
         {/* Adjusted Roundedbg and content on top */}
-        <div className="rounded-section absolute bottom-[0px] right-[-1px] scale-[0.7] z-0">
+        <div className="rounded-section absolute bottom-[80px] right-[-1px] scale-[0.7] z-40 md:bottom-0">
           <img
             src={Roundedbg}
             alt="Rounded background"
@@ -218,7 +218,7 @@ const Landing = () => {
                 alt="s1"
               />
               <div className="absolute top-[87px] md:top-[110px] text-black text-center">
-                <h2 className="font-bold text-lg group-hover:text-2xl font-sans group-hover:text-white">
+                <h2 className="font-bold text-lg font-montserrat group-hover:text-2xl group-hover:text-white">
                   Chocolates
                 </h2>
                 <h1 className="hidden md:block text-gray-600 font-sans group-hover:text-lg group-hover:font-bold">
@@ -238,7 +238,7 @@ const Landing = () => {
                 alt="s1"
               />
               <div className="absolute top-[87px] md:top-[110px] text-black text-center">
-                <h2 className="font-bold text-lg group-hover:text-2xl font-sans group-hover:text-white">
+                <h2 className="font-bold text-lg group-hover:text-2xl font-montserrat group-hover:text-white">
                   Cakes
                 </h2>
                 <h1 className="hidden md:block text-gray-600 font-sans group-hover:text-lg group-hover:font-bold">
@@ -258,7 +258,7 @@ const Landing = () => {
                 alt="s1"
               />
               <div className="absolute top-[87px] md:top-[110px] text-black text-center">
-                <h2 className="font-bold text-lg group-hover:text-2xl font-sans group-hover:text-white">
+                <h2 className="font-bold text-lg group-hover:text-2xl font-montserrat group-hover:text-white">
                   Cookies
                 </h2>
                 <h1 className="hidden md:block text-gray-600 font-sans group-hover:text-lg group-hover:font-bold">

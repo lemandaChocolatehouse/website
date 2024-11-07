@@ -6,6 +6,12 @@ import { CartContext } from "../CartContext";
 import axios from "axios";
 import Cart from "../Cart";
 import { convertImageToBase64 } from "../../utils";
+import Choco1 from "/assets/img/choco1.png";
+import Choco2 from "/assets/img/choco2.png";
+import Choco3 from "/assets/img/choco3.png";
+import Choco4 from "/assets/img/choco4.png";
+import Choco5 from "/assets/img/choco5.png";
+
 
 const Section3 = () => {
   const backend = import.meta.env.VITE_BACKEND_URL;
@@ -53,16 +59,16 @@ const Section3 = () => {
           .choclate-cards-wrapper {
             display: flex;
             flex-direction: row;
-            gap: 2rem;
-            padding: 1rem;;
-           overflow-x: auto; 
-  scrollbar-width: none; 
-  -ms-overflow-style: none;
+            gap: 3rem;
+            padding: 3rem 4rem;;
+            overflow-x: auto; 
+            scrollbar-width: none; 
+            -ms-overflow-style: none;
         }
             
           .choc-card {
             flex: 0 0 auto;
-            width: 20rem;
+            width: 28rem;
             height: auto;
             position: relative;
           }
@@ -71,7 +77,7 @@ const Section3 = () => {
             font-size: 0.875rem;
           }
           .choc-card img {
-            height: 200px;
+            height: 300px;
             object-fit: cover;
           }
           .choc-card h1 {
@@ -115,18 +121,22 @@ const Section3 = () => {
         `}
       </style>
 
-      <div className="section3 w-full py-10 pb-14 text-center ">
+      <div className="section3 w-full py-10 pb-14 text-center relative">
+        <img src={Choco1} alt="Choco 1" className="absolute top-16 left-10 w-40" />
+        <img src={Choco3} alt="Choco 1" className="absolute top-16 right-10 w-32" />
+        <img src={Choco4} alt="Choco 1" className="absolute top-48 right-[25vw] w-10" />
+        <img src={Choco5} alt="Choco 1" className="absolute bottom-5 right-5 w-32" />
+        <img src={Choco2} alt="Choco 1" className="absolute bottom-48 left-0 w-20" />
         <div className="w-full flex items-center justify-center pb-7">
           <img className="heading-3 w-1/2" src={Heading3} alt="Heading" />
         </div>
         <div className="section3-links flex text-[12px] md:text-2xl items-center justify-center md:gap-3 w-full md:p-5 py-6 md:py-1 bebas tracking-widest">
           {["ALL", "CHOCOLATE", "COOKIES", "CAKE"].map((item) => (
             <button
-              className={`px-6 py-2 ${
-                category.toUpperCase() === item
-                  ? "bg-[#592D1E] text-white uppercase rounded-full"
-                  : "bg-none uppercase"
-              }`}
+              className={`px-6 py-2 font-bebas ${category.toUpperCase() === item
+                ? "bg-[#592D1E] text-white uppercase rounded-full"
+                : "bg-none uppercase"
+                }`}
               key={item}
               onClick={() =>
                 setCategory(item === "ALL" ? "ALL" : item.toLowerCase())
@@ -150,47 +160,48 @@ const Section3 = () => {
                 filteredProducts.map((item) => (
                   <div
                     key={item.id}
-                    className="group choc-card flex flex-col items-center pt-5 gap-3 bg-white rounded-3xl shadow-xl shadow-[#dadada]"
+                    className="group choc-card flex flex-col justify-between items-center py-5 gap-3 bg-white rounded-3xl shadow-xl shadow-[#dadada]"
                   >
-                    <div
-                      onClick={() =>
-                        navigate(`/shop/product`, { state: { product: item } })
-                      }
-                      className="choc-card-child1 flex items-center justify-center w-[85%] h-[50%] cursor-pointer rounded-2xl"
-                    >
-                      <img
-                        className="scale-[0.8]"
-                        src={convertImageToBase64(item.Image)}
-                        alt={item.name}
-                      />
+                    <div className="w-full h-auto flex flex-col gap-3 items-center">
+                      <div
+                        onClick={() => navigate(`/shop/product`, { state: { product: item } })}
+                        className="choc-card-child1 flex items-center justify-center w-[80%] h-[50%] cursor-pointer rounded-2xl overflow-hidden"
+                      >
+                        <img
+                          className="w-full h-full object-cover"
+                          src={convertImageToBase64(item.Image)}
+                          alt={item.name}
+                        />
+                      </div>
+
+                      <h1
+                        onClick={() => navigate(`/shop/product`, { state: { product: item } })}
+                        className="text-xl cursor-pointer font-beach"
+                      >
+                        {item.name}
+                      </h1>
+                      <p className="hidden font-beach md:block px-9 text-base text-center choc-card-description">
+                        {item.desc}
+                      </p>
                     </div>
-                    <h1
-                      onClick={() =>
-                        navigate(`/shop/product`, { state: { product: item } })
-                      }
-                      className="text-xl cursor-pointer font-beach"
-                    >
-                      {item.name}
-                    </h1>
-                    <p className="hidden font-beach md:block  px-9 text-base text-center choc-card-description">
-                      {item.desc}
-                    </p>
                     <Link
-                      className="view-detail-button mt-4 pb-1 font-beach"
+                      className="view-detail-button font-beach"
                       to={`/shop/product/`}
                       state={{ product: item }}
                     >
                       View Detail
                     </Link>
-                    <button
-                      onClick={() => {
-                        addToCart(item);
-                        navigate("/shop/product/addtocart");
-                      }}
-                      className="choc-card-price shadow-md shadow-black absolute -top-4 -right-6 w-20 h-20 rounded-full bg-[#592D1E] flex items-center justify-center text-white text-3xl font-serif font-bold"
-                    >
-                      <IoBagHandleOutline className="group-hover:animate-rotate360" />
-                    </button>
+                    <div className="bg-[#f5f5f5] w-28 h-28 absolute -top-4 -right-6 rounded-full flex justify-center items-center">
+                      <button
+                        onClick={() => {
+                          addToCart(item);
+                          navigate("/shop/product/addtocart");
+                        }}
+                        className="choc-card-price shadow-md shadow-black  w-20 h-20 rounded-full bg-[#592D1E] flex items-center justify-center text-white text-3xl font-serif font-bold"
+                      >
+                        <IoBagHandleOutline className="group-hover:animate-rotate360" />
+                      </button>
+                    </div>
                   </div>
                 ))
               ) : (

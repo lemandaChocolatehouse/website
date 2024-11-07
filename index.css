@@ -330,7 +330,7 @@
 
   .choc-card {
     width: 80%;
-    height: fit-content;
+    height: auto;
     /* height: 55vh; */
     padding: 5vw 0vw;
   }

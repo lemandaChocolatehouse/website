@@ -9,7 +9,7 @@ const Section4 = () => {
       <div className="section4-para w-1/3">
         <p className="text-[#a47261] text-lg font-semibold">Indulge in our bakery's offerings, where every item is a testament to wholesome ingredients and genuine baking practices.
         </p>
-        <h1 className="mt-4 font-black text-xl text-[#592D1E]">Pure. <br />Wholesome. <br />Reliable.</h1>
+        <h1 className="mt-4 font-black text-xl text-[#592D1E] md:text-2xl">Pure. <br />Wholesome. <br />Reliable.</h1>
        </div>
         <h1 className="section4-heading text-6xl font-black text-[#592D1E] text-right leading-tight " >
           WHOLESOME <br /> GOODNESS,
