@@ -12,6 +12,30 @@ import textImg from "/assets/img/text.png";
 import bsqImg from "/assets/img/bsq.png";
 import rbgImg from "/assets/img/rbg.png";
 import { IoIosArrowForward } from "react-icons/io";
+import { useEffect, useState } from "react";
+
+const RollingNumber = ({ targetNumber, duration, stepTime }) => {
+  const [currentNumber, setCurrentNumber] = useState(0);
+
+  useEffect(() => {
+    const totalSteps = duration / stepTime;
+    const stepValue = targetNumber / totalSteps;
+
+    const interval = setInterval(() => {
+      setCurrentNumber(prevNumber => {
+        if (prevNumber >= targetNumber) {
+          clearInterval(interval);
+          return targetNumber;
+        }
+        return Math.min(prevNumber + stepValue, targetNumber);
+      });
+    }, stepTime);
+
+    return () => clearInterval(interval);
+  }, [targetNumber, duration, stepTime]);
+
+  return <h1 className="text-5xl font-bold">{Math.floor(currentNumber)} +</h1>
+};
 
 const Landing = () => {
   return (
@@ -82,12 +106,12 @@ const Landing = () => {
 
             <div className="flex gap-16 items-center">
               <div className="text-white">
-                <h1 className="text-5xl font-bold">780 +</h1>
+                <RollingNumber targetNumber={720} duration={1000} stepTime={10} />
                 <p className="text-[grey] font-sans">Happy Customers</p>
               </div>
               <div className="hrline w-[1px] h-16 bg-white"></div>
               <div className="text-white">
-                <h1 className="text-5xl font-bold">40 +</h1>
+                <RollingNumber targetNumber={20} duration={1000} stepTime={50} />
                 <p className="text-[grey] font-sans">Recipes</p>
               </div>
             </div>
@@ -155,7 +179,7 @@ const Landing = () => {
           alt=""
         />
         <img
-          className="absolute -top-64 -right-28 scale-[0.6] z-10"
+          className="absolute -top-64 -right-28 scale-[0.6] z-10 animate-rotate"
           src={groupLine}
           alt=""
         />

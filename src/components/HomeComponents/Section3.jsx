@@ -8,8 +8,8 @@ import Cart from "../Cart";
 import { convertImageToBase64 } from "../../utils";
 
 const Section3 = () => {
-  const backend = import.meta.env.VITE_BACKEND_URL ;
-  
+  const backend = import.meta.env.VITE_BACKEND_URL;
+
   const navigate = useNavigate();
   const [category, setCategory] = useState("ALL");
   const [products, setProducts] = useState([]); // Initialize as an empty array
@@ -150,7 +150,7 @@ const Section3 = () => {
                 filteredProducts.map((item) => (
                   <div
                     key={item.id}
-                    className="choc-card flex flex-col items-center pt-5 gap-3 bg-white rounded-3xl shadow-xl shadow-[#dadada]"
+                    className="group choc-card flex flex-col items-center pt-5 gap-3 bg-white rounded-3xl shadow-xl shadow-[#dadada]"
                   >
                     <div
                       onClick={() =>
@@ -189,7 +189,7 @@ const Section3 = () => {
                       }}
                       className="choc-card-price shadow-md shadow-black absolute -top-4 -right-6 w-20 h-20 rounded-full bg-[#592D1E] flex items-center justify-center text-white text-3xl font-serif font-bold"
                     >
-                      <IoBagHandleOutline />
+                      <IoBagHandleOutline className="group-hover:animate-rotate360" />
                     </button>
                   </div>
                 ))

@@ -7,7 +7,7 @@ const Section5 = () => {
     <div className='section5 w-full pt-10 px-5 bg-[#f5f5f5]'>
         <div className='egg-parent flex'>
         <div className='bigEgg w-[40%]'>
-        <img src={BigEgg} alt="" />
+        <img src={BigEgg} alt="" className="animate-customBounce" />
         </div>
         <div className='threeEggs w-[60%] flex flex-col items-center gap-7 pl-8 py-6'>
             <h1 className='section5-head text-6xl font-bold text-[#592D1E]'>CRAFT WITH PRESCISION</h1>

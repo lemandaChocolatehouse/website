@@ -18,7 +18,7 @@ const Section4 = () => {
        
       </div>
       <div className="section4-img w-[90%] pt-8 relative">
-        <img className="absolute -top-32 -left-28 scale-[0.6]" src={Cake3} alt="" />
+        <img className="absolute -top-32 -left-28 scale-[0.6] animate-customBounce2" src={Cake3} alt="" />
       <img src={Background} alt="" />
       </div>
     </div>
