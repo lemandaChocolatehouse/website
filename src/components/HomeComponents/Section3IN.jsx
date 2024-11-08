@@ -14,7 +14,10 @@ const Section3IN = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scroll = Math.floor(window.scrollY);
-      
+      const width = window.innerWidth;
+      if (width >= 450 && width <= 764) {
+        setIsFlipped(true);
+      }
       if (scroll >= 1200 && scroll <= 3000) {
         setRotate(true);
         if (scroll >= 2170) {
@@ -48,7 +51,7 @@ const Section3IN = () => {
         <h1 className='text-8xl font-bold relative leading-tight text-[#592D1E] '>Your Only <img className='absolute -top-16 right-40' src={Cake2} alt="" style={{ transform: `rotate(${rotation}deg)`, scale: '0.6' }} />  <img className='scale-[0.8] absolute -top-16 right-40' src={Shadow} alt="" /> <br /> Dose Of Delight</h1>
         <h2 className='text-[#592D1E] font-bold mt-7 font-jakarta'>Featured Item-</h2>
         <div className='w-full flex items-center my-2'>
-          <img className='free-cookie-img -ml-6 mr-4 w-60' src={Cookies} alt=""  />
+          <img className='free-cookie-img -ml-6 mr-4 w-60' src={Cookies} alt="" />
           <div className='-ml-5 font-beach'>
             <h1 className='font-black text-xl text-[#592D1E]'>CHOCO COOKIE</h1>
             <h2 className=' text-lg text-[#d18b73]'>Gluten Free</h2>
@@ -59,7 +62,7 @@ const Section3IN = () => {
       {/* <img className={`${isFlipped ? 'animate-flipHorizontal' : ''} section3In-right w-2/5 scale-[1.1] ${isFlipped ? 'scale-x-1' : 'scale-x-[-1]' }`} src={HalfCookie} alt="" /> */}
       <div className="relative section3In-right h-[80vh] mx-auto md:w-2/5 md:h-[85vh] flex justify-center items-center sm:w-[70vw] sm:h-[100vh] ">
         <div className="w-[80%] h-[85%] relative flex justify-center">
-          <img className={`${isFlipped ? 'animate-flipHorizontal' : ''} w-auto object-fit relative z-30 ${isFlipped ? 'scale-x-1' : 'scale-x-[-1]' }`}  src={HalfCookie2} alt="" />
+          <img className={`${isFlipped ? 'animate-flipHorizontal' : ''} w-auto object-fit relative z-30 ${isFlipped ? 'scale-x-1' : 'scale-x-[-1]'}`} src={HalfCookie2} alt="" />
           <div className="w-full h-[80%] bg-[#5B1C07] absolute bottom-0 rounded-2xl"></div>
         </div>
         <div className="absolute bottom-0 left-0">

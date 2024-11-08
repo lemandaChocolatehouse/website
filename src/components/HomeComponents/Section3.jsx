@@ -185,19 +185,19 @@ const Section3 = () => {
                       </p>
                     </div>
                     <Link
-                      className="view-detail-button font-beach"
+                      className="font-beach bg-[#6C2B15] text-white px-3 py-1.5 rounded-md md:hover:bg-[#5a2a13] active:bg-[#5a2a13] flex justify-center items-center"
                       to={`/shop/product/`}
                       state={{ product: item }}
                     >
                       View Detail
                     </Link>
-                    <div className="bg-[#f5f5f5] w-28 h-28 absolute -top-4 -right-6 rounded-full flex justify-center items-center">
+                    <div className="bg-[#f5f5f5] w-24 h-24 absolute -top-4 -right-6 rounded-full flex justify-center items-center md:w-28 md:h-28">
                       <button
                         onClick={() => {
                           addToCart(item);
                           navigate("/shop/product/addtocart");
                         }}
-                        className="choc-card-price shadow-md shadow-black  w-20 h-20 rounded-full bg-[#592D1E] flex items-center justify-center text-white text-3xl font-serif font-bold"
+                        className="shadow-md shadow-black  w-20 h-20 rounded-full bg-[#592D1E] flex items-center justify-center text-white text-3xl font-serif font-bold"
                       >
                         <IoBagHandleOutline className="group-hover:animate-rotate360" />
                       </button>

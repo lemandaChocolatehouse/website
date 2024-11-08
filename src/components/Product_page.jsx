@@ -135,13 +135,13 @@ const Product_page = () => {
         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto">
           <Link className="flex items-center gap-2 sm:gap-5">
             <span className="text-lg">SHOW</span>
-            <span className="py-2 px-4 sm:py-3 sm:px-6 rounded-3xl border-2 border-gray-300 text-sm sm:text-lg text-lg text-gray-600">
+            <span className="py-2 px-4 sm:py-3 sm:px-6 rounded-3xl border-2 border-gray-300 text-sm sm:text-lg text-gray-600">
               8
             </span>
           </Link>
           <Link className="flex items-center gap-2 sm:gap-5 text-lg mt-4 md:mt-0">
             <span className="text-lg">SORT BY</span>
-            <span className="py-2 px-4 sm:py-3 sm:px-6 rounded-3xl border-2 border-gray-300 text-sm sm:text-lg text-lg text-black tracking-tighter">
+            <span className="py-2 px-4 sm:py-3 sm:px-6 rounded-3xl border-2 border-gray-300 text-sm sm:text-lg text-black tracking-tighter">
               {selectedCategory} | {selectedPrice}
             </span>
           </Link>

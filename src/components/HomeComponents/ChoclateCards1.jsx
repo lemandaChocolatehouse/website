@@ -33,7 +33,7 @@ const ChoclateCards1 = () => {
 
   return (
     <div className="w-full flex flex-col items-center py-10">
-      <div className="flex flex-wrap justify-center gap-20">
+      <div className="flex flex-wrap justify-center gap-20 px-3">
         {(showMore ? products : products.slice(0, 3)).map((item, index) => (
           <div
             key={index}
@@ -58,14 +58,14 @@ const ChoclateCards1 = () => {
               onClick={() => {
                 addToCart(item);
               }}
-              className="flex items-center justify-center gap-2 bg-[#592D1E] text-white mt-3 text-sm font-semibold px-3 py-2 rounded-full"
+              className="flex items-center justify-center gap-2 bg-[#592D1E] text-white mt-3 text-sm font-semibold px-3 py-2 rounded-full font-poppins"
             >
               <IoBagHandleOutline /> Add to cart
             </button>
             <div
               className="choc-card-price-compo shadow-md shadow-black absolute -top-6 -right-5 w-16 h-16 rounded-full bg-[#592D1E] flex items-center justify-center text-white text-sm"
             >
-              <h1 className='prev-price text-center leading-4 font-semibold'>
+              <h1 className='prev-price text-center leading-4 font-semibold font-bebas text-lg'>
                 ₹{item.price} <br />
                 {/* <span className='text-xs line-through text-[#d18b73] font-medium'>
                   ₹{item.originalPrice}

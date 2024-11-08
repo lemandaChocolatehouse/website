@@ -13,6 +13,7 @@ export const Product1 = () => {
   const { product } = location.state || {}; // Get product data from location state
   const [quantity, setQuantity] = useState(1);
   const { cartItems, addToCart } = useContext(CartContext);
+
   const incrementQuantity = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
   };
@@ -98,21 +99,21 @@ export const Product1 = () => {
         <div className="productdesc-right w-[50%] h-[82vh] p-5">
           <div className="productdesc-right-child w-full h-full flex flex-col items-center pt-6 px-3 gap-3 border border-[#dadada] rounded-3xl overflow-hidden">
             <div className="flex justify-between w-full p-5 px-4">
-              <h1 className="font-medium text-lg">
+              <h1 className="font-medium text-lg font-poppins ">
                 ⭐ {product.rating || "N/A"} •{" "}
                 <Link className="underline">
                   {product.reviews || "0"} reviews
                 </Link>
               </h1>
               <div>
-                <h1 className="text-xl font-medium">₹{product.price}</h1>
-                <h2 className="line-through text-xl text-[#63624b] text-end">
+                <h1 className="text-2xl font-medium font-bebas">₹{product.price}</h1>
+                <h2 className="line-through text-xl text-[#63624b] text-end font-bebas">
                   ₹{product.originalPrice || "0"}
                 </h2>
               </div>
             </div>
             <div className="flex justify-between w-full p-7 pr-4 pl-5">
-              <div className="quantity flex items-center gap-2 text-2xl">
+              <div className="quantity flex items-center gap-2 text-2xl font-poppins">
                 <div
                   className="subtract w-6 h-6 rounded-full flex items-center justify-center border border-black cursor-pointer"
                   onClick={decrementQuantity}
@@ -128,7 +129,7 @@ export const Product1 = () => {
                 </div>
               </div>
               <button
-                className="cart-btn flex items-center gap-3 py-3 px-4 rounded-full bg-[#833829] text-white font-medium"
+                className="cart-btn flex items-center gap-3 py-3 px-4 rounded-full bg-[#833829] text-white font-medium font-poppins"
                 onClick={() => {
                   addToCart(product, quantity);
                   navigate("/shop/product/addtocart");
@@ -137,7 +138,7 @@ export const Product1 = () => {
                 <IoBagHandleOutline /> Add to cart
               </button>
             </div>
-            <div className="aman flex justify-between w-full p-7 pr-4 pl-5">
+            <div className="aman flex justify-between w-full p-7 pr-4 pl-5 font-bebas">
               <div>
                 <h1 className="text-xl font-medium text-[#63624b]">
                   ₹{product.price}
@@ -149,12 +150,12 @@ export const Product1 = () => {
               <div>
                 <h1 className="text-xl font-medium">
                   {" "}
-                  ₹{product.price * quantity}
+                  ₹{(product.price * quantity).toFixed(2)}
                 </h1>
                 <h1 className="tax text-xl text-[#63624b] text-end mt-2">₹0</h1>
               </div>
             </div>
-            <div className="flex justify-between w-full p-7 pr-4 pl-5 border-t-2 border-[#dadada]">
+            <div className="flex justify-between w-full p-7 pr-4 pl-5 border-t-2 border-[#dadada] font-bebas">
               <h1 className="text-2xl font-bold text-[#63624b]">TOTAL</h1>
               <h1 className="text-xl font-medium text-[#63624b]">
                 ₹{(product.price * quantity).toFixed(2)}
