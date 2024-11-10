@@ -56,7 +56,8 @@ const Section2 = () => {
         <img className="scale-[1.1] drop-shadow-xl shadow-[#0000000]" src={Choc} alt="Chocolate" />
         <div className="in-3-text px-16 -mt-2 ml-7">
           <img className="mb-2" src={Heading} alt="Heading" /> {/* Replace heading text with image */}
-          <img className="pr-10" src={Paragraph} alt="Paragraph" /> {/* Replace paragraph text with image */}
+          {/* <img className="pr-10" src={Paragraph} alt="Paragraph" /> Replace paragraph text with image */}
+          <p className="pr-10 font-beach text-[#A47261] text-sm">Our commitment to quality means you get fresh delightful chocolate, cookies and freshly baked cakes daily without compromise</p>
         </div>
       </div>
     </div>
