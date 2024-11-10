@@ -47,15 +47,15 @@ const Landing = () => {
             src={Text}
             alt=""
           /> */}
-          <div className="text-white font-beach text-[55px] md:text-[70px] lg:text-[110px] md:leading-[120px] relative z-40">MELT YOUR HEARTS</div>
+          <div className="text-white font-beach text-[50px] md:text-[55px] lg:text-[80px] md:leading-[120px] relative z-40">MELT YOUR HEARTS</div>
           <div className="w-[45vw] flex flex-col justify-center relative z-20">
-            <div className="flex items-center gap-4 w-full my-8">
+            <div className="flex items-center gap-4 w-full my-8 md:mt-8 md:mb-0">
               <div className="text-white text-[6px] md:text-[12.5px] roboto-r  md:w-[40%] ">Crafted with love, passion, and the finest ingredients, our chocolates and baked treats offer an irresistible taste of sweetness and elegance. Each bite tells the story of dedication and artistry.
               </div>
-              <div className="w-[30%] md:w-[50%] text-white font-beach text-[60px] md:text-[110px] md:leading-[100px]">WITH</div>
+              <div className="w-[30%] md:w-[50%] text-white font-beach text-[50px] md:text-[55px] lg:text-[80px] md:leading-[100px]">WITH</div>
             </div>
           </div>
-          <div className="text-white font-jagret text-[64px] md:text-[70px] lg:text-[110px] md:leading-[180px] relative z-40">EVERY BITE</div>
+          <div className="text-white font-jagret text-[50px] md:text-[55px] lg:text-[80px] md:leading-[180px] relative z-40">EVERY BITE</div>
           <img
             className="images absolute top-3 -right-48 scale-[0.8]"
             src={Choclate1}
