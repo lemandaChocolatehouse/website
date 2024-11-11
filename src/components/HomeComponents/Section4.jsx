@@ -1,5 +1,5 @@
 
-import Background from "/assets/img/cookieFull.png";
+import Background from "/assets/img/cookieFull2.png";
 import Cake3 from "/assets/img/cake3.png";
 
 const Section4 = () => {

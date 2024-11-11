@@ -13,6 +13,7 @@ export default {
         bebas: ['Bebas Neue', 'cursive'],
         jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
+        cookie: ['Cookie', 'cursive'],
       },
       animation: {
         rotate: 'rotate 800ms ease-in-out 1',

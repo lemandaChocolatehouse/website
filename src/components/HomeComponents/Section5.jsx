@@ -11,7 +11,7 @@ const Section5 = () => {
         </div>
         <div className='threeEggs w-[60%] flex flex-col items-center gap-7 pl-8 py-6'>
             <h1 className='section5-head text-6xl font-semibold text-[#592D1E] font-bebas'>CRAFTED WITH PRESCISION</h1>
-            <p className='section5-para px-24 font-poppins text-center text-lg'>We take pride in using only the <span className='text-[#592d1e] font-semibold'>finest, locally sourced</span> ingredients to ensure that each loaf, pastry, and treat that leaves our ovens is a masterpiece.</p>
+            <p className='section5-para px-24 font-poppins text-center text-lg'>We take pride in crafting each <span className='text-[#592d1e] font-semibold'>chocolate, cookie, and cake</span> with only the finest, premium ingredients, ensuring every bite melts in your mouth and warms your heart.</p>
             <div className='w-[50%]'>
             <img src={ThreeEggs} alt="" />
             </div>

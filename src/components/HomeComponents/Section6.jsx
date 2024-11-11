@@ -14,13 +14,13 @@ const Section6 = () => {
               {
                 name: "Tara",
                 rating: "5",
-                desc: "“Le manda is my go to bakery! The sourdough is an absolute delight, and every pastry is a masterpiece.”",
+                desc: "“Le manda is my go to bakery! The sourdough is an absolute delight, and every Cookies is a masterpiece.”",
                 image: "/assets/img/man2.webp",
               },
               {
                 name: "Vishwajit",
                 rating: "4",
-                desc: "“Le manda is my go to bakery! The sourdough is an absolute delight, and every pastry is a masterpiece.”",
+                desc: "“Le manda is my go to bakery! The sourdough is an absolute delight, and every Cookies is a masterpiece.”",
                 image: "/assets/img/man1.png",
               },
               {
