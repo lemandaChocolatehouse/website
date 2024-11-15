@@ -82,6 +82,9 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
             {item}
           </Link>
         ))}
+        <Link to="https://www.shiprocket.in/shipment-tracking/" target="_blank">
+        <span className="">Track order</span>
+        </Link>
       </div>
 
       {/* Shop Button, Heart Icon, and Hamburger Menu */}
@@ -104,6 +107,7 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
         >
           SHOP
         </Link>
+       
 
         {/* Conditionally render Dashboard for admin */}
         {isAuthenticated && userEmail === "admin@gmail.com" && (
