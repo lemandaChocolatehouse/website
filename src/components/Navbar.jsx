@@ -62,7 +62,7 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
       </Link>
 
       {/* Navigation Links */}
-      <div className="hidden lg:flex gap-20 px-10 py-2 border-2 border-[#000] rounded-full font-medium ml-40 lg:ml-0">
+      <div className="hidden lg:flex lg:gap-10 xl:gap-20 px-10 py-2 border-2 border-[#000] rounded-full font-medium ml-40 lg:ml-0">
         {["Home", "About", "Product", "Contact"].map((item, index) => (
           <Link
             className={`${activeLink === item ? "active" : ""}`}
