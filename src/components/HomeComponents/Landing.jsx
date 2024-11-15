@@ -169,7 +169,7 @@ const Landing = () => {
           </div>
         </div>
         <img
-          className="absolute top-[30px] md:top-[-150px] md:right-[-130px] scale-[0.8]"
+          className="absolute top-[100px] md:top-[-150px] md:right-[-130px] scale-[0.8]"
           src={Choclate}
           alt=""
         />
