@@ -83,7 +83,6 @@ const Section3 = () => {
           .choc-card h1 {
             white-space: normal;
             text-align: center;
-            font-size: 1.25rem;
           }
           .view-detail-button {
             background-color: #6C2B15;
@@ -111,7 +110,6 @@ const Section3 = () => {
           @media (max-width: 768px) {
             .choc-card {
               width: 14rem;
-              height: 20rem;
             }
             .choc-card img {
               height: 150px;
@@ -160,7 +158,7 @@ const Section3 = () => {
                 filteredProducts.map((item) => (
                   <div
                     key={item.id}
-                    className="group choc-card flex flex-col justify-between items-center py-5 gap-3 bg-white rounded-3xl shadow-xl shadow-[#dadada]"
+                    className="group choc-card flex flex-col justify-between items-center pb-5 md:py-5 gap-3 bg-white rounded-3xl shadow-xl shadow-[#dadada] "
                   >
                     <div className="w-full h-auto flex flex-col gap-3 items-center">
                       <div
@@ -180,7 +178,7 @@ const Section3 = () => {
                       >
                         {item.name}
                       </h1>
-                      <p className="hidden font-beach md:block px-9 text-base text-center choc-card-description">
+                      <p className="hidden font-beach md:block text-base text-center choc-card-description">
                         {item.desc}
                       </p>
                     </div>
