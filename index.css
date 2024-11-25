@@ -96,11 +96,11 @@
   font-style: normal;
 }
 
-.landing-image {
-  background-image: url("./public/assets/img/bigbg.png");
+/* .landing-image {
+  background-image: url("./public/assets/img/bigbg.webp");
   background-position: center;
   background-size: cover;
-}
+} */
 .menu,
 .menu-slider {
   display: none;
