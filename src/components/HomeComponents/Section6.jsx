@@ -21,7 +21,7 @@ const Section6 = () => {
                 name: "Vishwajit",
                 rating: "4",
                 desc: "“Le manda is my go to bakery! The sourdough is an absolute delight, and every Cookies is a masterpiece.”",
-                image: "/assets/img/man1.png",
+                image: "/assets/img/man1.webp",
               },
               {
                 name: "Sumit",

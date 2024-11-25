@@ -1,5 +1,5 @@
 
-import BigEgg from "/assets/img/eggBig.png";
+import BigEgg from "/assets/img/eggBig.webp";
 import ThreeEggs from "/assets/img/threeEggs.png";
 
 const Section5 = () => {

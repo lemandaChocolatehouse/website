@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"; // Import Link for navigation
 import Text from "/assets/img/Text Container.png";
-import Choclate from "/assets/img/right_choclate.png";
+import Choclate from "/assets/img/right_choclate.webp";
 import Choclate1 from "/assets/img/choclate1.png";
 import Choclate2 from "/assets/img/choclate2.png";
 import Choclate3 from "/assets/img/choclate3.png";

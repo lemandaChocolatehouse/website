@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import Image from "/assets/img/mainlogo.png";
+import Image from "/assets/img/mainlogo.webp";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { SiIfixit } from "react-icons/si";
 import { FaHeart } from "react-icons/fa";
