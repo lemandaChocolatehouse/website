@@ -40,7 +40,7 @@ const RollingNumber = ({ targetNumber, duration, stepTime }) => {
 const Landing = () => {
   return (
     <div className="landing w-full h-fit bg-white px-4 py-3 md:py-24">
-      <div className="landing-image overflow-hidden w-full h-screen bg-[#592D1E] rounded-[36px] px-8 py-6 flex justify-between relative">
+      <div className="landing-image overflow-hidden w-full h-[630px] md:h-screen bg-[#592D1E] rounded-[36px] px-8 pt-10 py-6 flex justify-between relative">
         <div className="relative">
           {/* <img
             className="text-content w-[42vw] relative z-20"
@@ -185,7 +185,7 @@ const Landing = () => {
         />
 
         {/* Adjusted Roundedbg and content on top */}
-        <div className=" absolute bottom-[10px] right-[-1px] scale-[0.7] z-40 sm:-bottom-[10px] md:hidden lg:bottom-20 lg:block">
+        <div className=" absolute bottom-0 right-[-1px] scale-[0.7] z-40 sm:-bottom-[10px] md:hidden lg:bottom-10 lg:block">
           <img
             src={Roundedbg}
             alt="Rounded background"
