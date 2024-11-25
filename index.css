@@ -161,7 +161,7 @@
     border: 1px solid #000;
     display: flex;
     flex-direction: column;
-    padding: 18vw 6vw;
+    padding: 25vw 6vw;
     gap: 7vw;
     width: 100%;
     height: 100vh;
@@ -207,7 +207,7 @@
   }
   .landing {
     padding: 0;
-    margin-top: 10vw;
+    /* margin-top: 15vw; */
   }
   .landing-image {
     display: flex;
@@ -236,8 +236,7 @@
     justify-content: space-between;
     width: 100%;
     padding: 1vw 0vw;
-    margin-top: 10vw;
-
+    margin-top: 3vw;
     display: flex;
   }
   .buttons button {
@@ -332,7 +331,6 @@
     width: 80%;
     height: auto;
     /* height: 55vh; */
-    padding: 5vw 0vw;
   }
   .choc-card-compo {
     width: 80%;
@@ -343,18 +341,8 @@
   .choc-card-compo h1 {
     font-size: 5vw;
   }
-  .choc-card h1 {
-    font-size: 5vw;
-  }
-  .choc-card p {
-    font-size: 4vw;
-  }
   .choc-card-compo p {
     font-size: 4vw;
-  }
-  .choc-card a {
-    font-size: 4.3vw;
-    font-weight: 600;
   }
   .choc-card-child1 {
     width: 80%;
@@ -985,5 +973,43 @@
   .contact-page {
     padding-top: 12vw;
     height: fit-content;
+  }
+}
+
+
+@media only screen and (min-width: 767px) and (max-width: 1024px) {
+  .Navbar {
+    border-bottom: 1px solid #592d1e;
+    z-index: 99999999;
+  }
+  .mobile-menu-slider-on {
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    padding: 15vw 6vw;
+    gap: 4vw;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    background-color: #f5f5f5;
+    z-index: 100;
+  }
+  .mobile-menu-slider-on a {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 4vw;
+    font-weight: 600;
+  }
+}
+
+
+
+@media only screen and (min-width: 385px) and (max-width: 1024px) {
+  .threeImages{
+    margin-top: 30vh;
   }
 }

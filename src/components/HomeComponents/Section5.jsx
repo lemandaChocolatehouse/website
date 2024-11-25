@@ -10,8 +10,8 @@ const Section5 = () => {
         <img src={BigEgg} alt="" className="animate-customBounce" />
         </div>
         <div className='threeEggs w-[60%] flex flex-col items-center gap-7 pl-8 py-6'>
-            <h1 className='section5-head text-6xl font-semibold text-[#592D1E] font-bebas'>CRAFTED WITH PRESCISION</h1>
-            <p className='section5-para px-24 font-poppins text-center text-lg'>We take pride in crafting each <span className='text-[#592d1e] font-semibold'>chocolate, cookie, and cake</span> with only the finest, premium ingredients, ensuring every bite melts in your mouth and warms your heart.</p>
+            <h1 className='section5-head text-6xl font-semibold text-[#592D1E] font-bebas md:text-4xl xl:text-6xl'>CRAFTED WITH PRESCISION</h1>
+            <p className='section5-para px-24 font-poppins text-center text-lg md:px-0 xl:px-24'>We take pride in crafting each <span className='text-[#592d1e] font-semibold'>chocolate, cookie, and cake</span> with only the finest, premium ingredients, ensuring every bite melts in your mouth and warms your heart.</p>
             <div className='w-[50%]'>
             <img src={ThreeEggs} alt="" />
             </div>

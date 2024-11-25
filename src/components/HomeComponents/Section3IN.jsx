@@ -47,8 +47,8 @@ const Section3IN = () => {
 
   return (
     <div className='section3In flex gap-3 w-full h-[90vh] bg-[#fff] p-8 px-20 font-beach'>
-      <div className="section3In-left flex flex-col  py-5 w-3/5 h-full ">
-        <h1 className='text-8xl font-bold relative leading-tight text-[#592D1E] '>Your Only <img className='absolute -top-16 right-40' src={Cake2} alt="" style={{ transform: `rotate(${rotation}deg)`, scale: '0.6' }} />  <img className='scale-[0.8] absolute -top-16 right-40' src={Shadow} alt="" /> <br /> Dose Of Delight</h1>
+      <div className="section3In-left flex flex-col  py-5 w-3/5 h-full xl:py-14 ">
+        <h1 className='text-8xl font-bold relative leading-tight text-[#592D1E] md:text-6xl lg:text-7xl xl:text-8xl'>Your Only <img className='absolute -top-16 right-40 hidden xl:block xl:right-0 2xl:right-44 2xl:-top-24' src={Cake2} alt="" style={{ transform: `rotate(${rotation}deg)`, scale: '0.6' }} />  <img className='scale-[0.8] absolute -top-16 right-40 hidden xl:block xl:right-0 2xl:right-44 2xl:-top-24' src={Shadow} alt="" /> <br /> Dose Of Delight</h1>
         <h2 className='text-[#592D1E] font-bold mt-7 font-jakarta'>Featured Item-</h2>
         <div className='w-full flex items-center my-2'>
           <img className='free-cookie-img -ml-6 mr-4 w-60' src={Cookies} alt="" />

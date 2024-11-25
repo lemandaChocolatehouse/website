@@ -51,18 +51,18 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
   }, []);
 
   return (
-    <div className="Navbar fixed top-0 flex items-center justify-between w-full py-3 px-4 bg-[#f5f5f5] text-black z-50">
+    <div className="Navbar fixed top-0 flex items-center justify-between w-full py-3 px-4 bg-[#f5f5f5] text-black lg:z-[999]">
       {/* Logo */}
       <Link to="/" className="w-auto flex gap-3 h-[50px]">
-        <img className="max-w-20 " src={Image} alt="Logo" />
-        <div className="w-auto h-auto flex flex-col text-3xl md:text-5xl font-cookie relative">
+        <img className="max-w-20 h-14 md:min-w-16" src={Image} alt="Logo" />
+        <div className="w-auto h-auto hidden sm:flex flex-col text-3xl md:text-5xl font-cookie relative">
           <span>Lemanda</span>
           <span className="-bottom-1 md:-bottom-3 md:left-7 absolute text-base md:text-xl">Chocolate</span>
         </div>
       </Link>
 
       {/* Navigation Links */}
-      <div className="nav_links flex gap-20 px-10 py-2 border-2 border-[#000] rounded-full font-medium ml-40">
+      <div className="hidden lg:flex lg:gap-10 xl:gap-20 px-10 py-2 border-2 border-[#000] rounded-full font-medium ml-40 lg:ml-0">
         {["Home", "About", "Product", "Contact"].map((item, index) => (
           <Link
             className={`${activeLink === item ? "active" : ""}`}
@@ -88,7 +88,7 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
       </div>
 
       {/* Shop Button, Heart Icon, and Hamburger Menu */}
-      <div className=" flex items-center gap-1 md:gap-3">
+      <div className="flex items-center gap-1 md:gap-3">
         <Link
           to="/wishlist"
           className="text-[#592D1E] text-2xl ml-4"
@@ -102,7 +102,7 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
 
         <Link
           to="/shop"
-          className="px-7 py-2 rounded-full bg-[#592D1E] text-xl tracking-wider text-white bebas shadow-md shadow-[#0000005a] hidden md:block"
+          className="px-7 py-2 rounded-full bg-[#592D1E] text-xl tracking-wider text-white bebas shadow-md shadow-[#0000005a] hidden xl:block"
           onClick={() => handleLinkClick("Shop")}
         >
           SHOP
@@ -160,14 +160,14 @@ export const Navbar = ({ isActive, menuBtn, activeLink, handleLinkClick }) => {
         )}
 
         {/* Hamburger Menu for Mobile */}
-        <div onClick={menuBtn} className="mobile-menu-btn">
+        <div onClick={menuBtn} className="lg:hidden">
           {isActive === false ? (
             <span className="text-[#592D1E]">
-              <GiHamburgerMenu />
+              <GiHamburgerMenu size={40} />
             </span>
           ) : (
             <span className="text-[#592D1E]">
-              <SiIfixit />
+              <SiIfixit size={40}/>
             </span>
           )}
         </div>
