@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
-import AboutImage from "/assets/img/abt.jpg"; // Adjust the path if needed
+import AboutImage from "/assets/img/abt.webp"; // Adjust the path if needed
 
 const AboutSection1 = () => {
   const [showContent, setShowContent] = useState(false);
