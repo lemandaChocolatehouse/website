@@ -9,7 +9,7 @@ import Choclate5 from "/assets/img/choclate5.png";
 import groupLine from "/assets/img/groupLine.png";
 import Roundedbg from "/assets/img/Roundedbg.png";
 import textImg from "/assets/img/text.png";
-import bsqImg from "/assets/img/bsq.png";
+import bsqImg from "/assets/img/bsq.webp";
 import rbgImg from "/assets/img/rbg.png";
 import { IoIosArrowForward } from "react-icons/io";
 import { useEffect, useState } from "react";
