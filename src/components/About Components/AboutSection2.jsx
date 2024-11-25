@@ -20,7 +20,7 @@ const AboutSection2 = () => {
       </div>
       <div className="about-section2-btm-right w-[44%] h-[60%] rounded-xl shadow-lg bg-[#dadada] shadow-[#9c9c9c] absolute bottom-4 right-20">
         <img
-          src="/assets/img/abt3.png"
+          src="/assets/img/abt3.webp"
           alt="About Us Image"
           className=" mt-[-190px] object-cover rounded-xl"
         />
