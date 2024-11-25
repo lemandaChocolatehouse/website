@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import BigCake from "/assets/img/cake.png";
+import BigCake from "/assets/img/cake.webp";
 import Choc from "/assets/img/choc.png";
 import SmallCookie from "/assets/img/Mask.png";
 import Text2 from "/assets/img/text2.png";
