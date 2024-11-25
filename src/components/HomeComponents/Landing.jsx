@@ -40,7 +40,7 @@ const RollingNumber = ({ targetNumber, duration, stepTime }) => {
 const Landing = () => {
   return (
     <div className="landing w-full h-fit bg-white px-4 py-3 md:py-24">
-      <div className="landing-image overflow-hidden w-full h-[630px] md:h-screen bg-[#592D1E] rounded-[36px] px-8 pt-10 py-6 flex justify-between relative">
+      <div className="landing-image overflow-hidden w-full h-[630px] md:h-[750px] bg-[#592D1E] rounded-[36px] px-8 pt-10 py-6 flex justify-between relative">
         <div className="relative">
           {/* <img
             className="text-content w-[42vw] relative z-20"
