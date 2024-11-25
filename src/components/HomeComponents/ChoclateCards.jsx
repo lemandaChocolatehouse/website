@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios"; // Import axios for making HTTP requests
 import { CartContext } from "../CartContext";
-import { convertImageToBase64 } from "../../utils";
+// import { convertImageToBase64 } from "../../utils";
 import PropTypes from "prop-types";
 // import Cart from "../Cart";
 
@@ -86,7 +86,7 @@ const ChoclateCards = ({ selectedCategory, selectedPrice }) => {
             >
               <div className="relative w-full pb-[75%]">
                 <img
-                  src={convertImageToBase64(product.Image)}
+                  src={product.Image}
                   alt={product.name}
                   className="absolute inset-0 w-full h-full object-cover"
                 />

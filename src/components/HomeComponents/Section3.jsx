@@ -5,7 +5,7 @@ import Heading3 from "/assets/img/heading3.png";
 import { CartContext } from "../CartContext";
 import axios from "axios";
 import Cart from "../Cart";
-import { convertImageToBase64 } from "../../utils";
+// import { convertImageToBase64 } from "../../utils";
 import Choco1 from "/assets/img/choco1.png";
 import Choco2 from "/assets/img/choco2.png";
 import Choco3 from "/assets/img/choco3.png";
@@ -167,7 +167,7 @@ const Section3 = () => {
                       >
                         <img
                           className="w-full h-full object-cover"
-                          src={convertImageToBase64(item.Image)}
+                          src={item.Image}
                           alt={item.name}
                         />
                       </div>

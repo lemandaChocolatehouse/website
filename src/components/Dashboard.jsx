@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { RiStickyNoteAddFill } from "react-icons/ri";
 import ProductForm from "./ProductForm"; // Import the ProductForm component
-import { convertImageToBase64 } from "../utils";
+// import { convertImageToBase64 } from "../utils";
 
 const Dashboard = () => {
 
@@ -448,7 +448,7 @@ const Dashboard = () => {
                 <div className="relative w-full pb-[55%]">
                   {/* Display main image */}
                   <img
-                    src={convertImageToBase64(item.Image)} // Base64 image
+                    src={item.Image} // Base64 image
                     alt={item.name}
                     className="absolute inset-0 w-full h-full object-cover"
                   />

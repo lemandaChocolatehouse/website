@@ -5,7 +5,7 @@ import { RiSubtractFill } from "react-icons/ri";
 import { IoMdAdd } from "react-icons/io";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { CartContext } from "../CartContext";
-import { convertImageToBase64 } from "../../utils";
+// import { convertImageToBase64 } from "../../utils";
 
 export const Product1 = () => {
   const location = useLocation();
@@ -63,27 +63,21 @@ export const Product1 = () => {
             <div
               className="hr-box  w-20 h-20 md:w-40 md:h-40 rounded-3xl shadow-lg shadow-[#000000ab]"
               style={{
-                backgroundImage: `url(${convertImageToBase64(
-                  product?.Image1
-                )})`,
+                backgroundImage: `url(${product?.Image1})`,
                 backgroundSize: "cover",
               }}
             />
             <div
               className="hr-box  w-20 h-20 md:w-40 md:h-40 rounded-3xl shadow-lg shadow-[#000000ab]"
               style={{
-                backgroundImage: `url(${convertImageToBase64(
-                  product?.Image2
-                )})`,
+                backgroundImage: `url(${product?.Image2})`,
                 backgroundSize: "cover",
               }}
             />
             <div
               className="hr-box w-20 h-20 md:w-40 md:h-40 rounded-3xl shadow-lg shadow-[#000000ab]"
               style={{
-                backgroundImage: `url(${convertImageToBase64(
-                  product?.Image3
-                )})`,
+                backgroundImage: `url(${product?.Image3})`,
                 backgroundSize: "cover",
               }}
             />
@@ -92,7 +86,7 @@ export const Product1 = () => {
           <div
             className="productdesc-left-right w-[76%] h-full bg-[#c4c4c4] rounded-3xl shadow-lg shadow-[#000000ab] bg-cover bg-center"
             style={{
-              backgroundImage: `url(${convertImageToBase64(product?.Image)})`,
+              backgroundImage: `url(${product?.Image})`,
             }}
           ></div>
         </div>
@@ -106,7 +100,9 @@ export const Product1 = () => {
                 </Link>
               </h1>
               <div>
-                <h1 className="text-2xl font-medium font-bebas">₹{product.price}</h1>
+                <h1 className="text-2xl font-medium font-bebas">
+                  ₹{product.price}
+                </h1>
                 <h2 className="line-through text-xl text-[#63624b] text-end font-bebas">
                   ₹{product.originalPrice || "0"}
                 </h2>

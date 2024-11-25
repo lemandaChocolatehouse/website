@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IoBagHandleOutline } from "react-icons/io5";
 import { CartContext } from '../CartContext'; // Import useCart hook to manage cart
-import { convertImageToBase64 } from '../../utils'; // Import utility function to convert image to base64
+// import { convertImageToBase64 } from '../../utils'; // Import utility function to convert image to base64
 
 const ChoclateCards1 = () => {
 
@@ -43,7 +43,7 @@ const ChoclateCards1 = () => {
               onClick={() => handleClick('/shop/product')}
               className="choc-card-image-container flex items-center justify-center overflow-hidden h-40 w-40 rounded-[+5px] bg-gray-100 cursor-pointer"
             >
-              <img src={convertImageToBase64(item.Image)} alt={item.name} className="object-cover h-full w-full" />
+              <img src={item.Image} alt={item.name} className="object-cover h-full w-full" />
             </div>
             <h1
               onClick={() => handleClick('/shop/product')}
